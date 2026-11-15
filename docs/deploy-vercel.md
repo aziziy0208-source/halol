@@ -67,6 +67,10 @@ Deploy (Git push or `npx vercel --prod`). The build log shows the migrations and
 3. Delete `SEED_SUPERADMIN_PASSWORD` in Vercel (existing users are never changed by the seed).
 4. Admin → **Certificates → Template preview → PDF**: proves that Chromium, fonts and
    template images work on Vercel. If it fails, check the function log (see Troubleshooting).
+   Without signing in: `curl -H "Authorization: Bearer <HEALTH_RENDER_TOKEN>"
+   https://<domain>/api/health/render` renders the sample certificate and round-trips a test
+   object through Blob storage (`?pdf=1` returns the sample PDF). Without the variable the
+   route answers 404.
 5. Set up the data that only exists locally: signatory (signature, stamp), companies, settings
    (number format `H-2020{YY}.{NNNN}-1`, four-eyes), users.
 

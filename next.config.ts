@@ -36,6 +36,7 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/admin/**": ["./public/certificate/**/*", "./node_modules/playwright-core/**/*"],
     "/v/**": ["./public/certificate/**/*", "./node_modules/playwright-core/**/*"],
+    "/api/health/render": ["./public/certificate/**/*", "./node_modules/playwright-core/**/*"],
   },
   cacheComponents: true,
   partialPrefetching: true,

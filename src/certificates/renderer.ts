@@ -1,12 +1,14 @@
 // Node-only module (fs, Playwright): cannot end up in a client bundle.
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { type Browser, chromium, type Page } from "playwright-core";
+import { type Browser, type BrowserContext, type BrowserContextOptions, chromium, type Page } from "playwright-core";
 
 /**
  * Headless Chromium that turns certificate HTML into PDF and PNG.
  *
- * - One shared browser per server process, a fresh context per render.
+ * - One shared browser per server process, a fresh context per render. On serverless
+ *   hosts (Vercel) a browser per render instead: a kept browser can be frozen between
+ *   invocations, and the single-process Chromium there dies with its contexts.
  * - The page gets the HTML via setContent; its only network access is the
  *   template assets (fonts, logo) under ASSET_ORIGIN, served from public/certificate.
  *   Every other request is blocked, so output never depends on the network and
@@ -24,7 +26,6 @@ const ASSET_DIR = path.join(process.cwd(), "public", "certificate");
  */
 const DEFAULT_CHROMIUM_PACK_URL =
   "https://github.com/Sparticuz/chromium/releases/download/v153.0.0/chromium-v153.0.0-pack.x64.tar";
-const MAX_PARALLEL = 2;
 const READY_TIMEOUT_MS = 20_000;
 /** A4 at 96 dpi CSS pixels. */
 const A4_PX = { width: 794, height: 1123 };
@@ -37,8 +38,13 @@ const MIME: Record<string, string> = {
 
 let browserPromise: Promise<Browser> | undefined;
 
+/** Pack URL of the serverless Chromium, or "" for a normal Playwright Chromium. */
+function serverlessPackUrl(): string {
+  return process.env.CHROMIUM_PACK_URL || (process.env.VERCEL ? DEFAULT_CHROMIUM_PACK_URL : "");
+}
+
 async function launchBrowser(): Promise<Browser> {
-  const packUrl = process.env.CHROMIUM_PACK_URL || (process.env.VERCEL ? DEFAULT_CHROMIUM_PACK_URL : "");
+  const packUrl = serverlessPackUrl();
   if (!packUrl) return chromium.launch({ headless: true });
   // Vercel functions run on Amazon Linux 2023; chromium-min detects that through this
   // variable (at import time) and then unpacks the system libraries Chromium needs.
@@ -82,7 +88,8 @@ let running = 0;
 const waiting: (() => void)[] = [];
 
 async function withSlot<T>(task: () => Promise<T>): Promise<T> {
-  if (running >= MAX_PARALLEL) await new Promise<void>((resolve) => waiting.push(resolve));
+  const maxParallel = serverlessPackUrl() ? 1 : 2;
+  if (running >= maxParallel) await new Promise<void>((resolve) => waiting.push(resolve));
   running++;
   try {
     return await task();
@@ -92,32 +99,44 @@ async function withSlot<T>(task: () => Promise<T>): Promise<T> {
   }
 }
 
-async function withCertificatePage<T>(html: string, scale: number, work: (page: Page) => Promise<T>): Promise<T> {
+/** A fresh browser context (and on serverless hosts a fresh browser) for one task. */
+async function withContext<T>(options: BrowserContextOptions, work: (context: BrowserContext) => Promise<T>): Promise<T> {
   return withSlot(async () => {
-    const browser = await getBrowser();
-    const context = await browser.newContext({ viewport: A4_PX, deviceScaleFactor: scale });
+    const perTask = Boolean(serverlessPackUrl());
+    const browser = perTask ? await launchBrowser() : await getBrowser();
     try {
-      await context.route("**/*", async (route) => {
-        const url = new URL(route.request().url());
-        if (url.origin !== ASSET_ORIGIN) return route.abort("blockedbyclient");
-        const relative = decodeURIComponent(url.pathname).replace(/^\/certificate\//, "");
-        const body = await readAsset(relative);
-        if (!body) return route.abort("filenotfound");
-        return route.fulfill({
-          body,
-          contentType: MIME[path.extname(relative)] ?? "application/octet-stream",
-          headers: { "access-control-allow-origin": "*" },
-        });
-      });
-      const page = await context.newPage();
-      await page.setContent(html, { waitUntil: "load" });
-      await page.waitForFunction(() => document.documentElement.getAttribute("data-ready") === "1", null, {
-        timeout: READY_TIMEOUT_MS,
-      });
-      return await work(page);
+      const context = await browser.newContext(options);
+      try {
+        return await work(context);
+      } finally {
+        await context.close().catch(() => undefined);
+      }
     } finally {
-      await context.close();
+      if (perTask) await browser.close().catch(() => undefined);
     }
+  });
+}
+
+async function withCertificatePage<T>(html: string, scale: number, work: (page: Page) => Promise<T>): Promise<T> {
+  return withContext({ viewport: A4_PX, deviceScaleFactor: scale }, async (context) => {
+    await context.route("**/*", async (route) => {
+      const url = new URL(route.request().url());
+      if (url.origin !== ASSET_ORIGIN) return route.abort("blockedbyclient");
+      const relative = decodeURIComponent(url.pathname).replace(/^\/certificate\//, "");
+      const body = await readAsset(relative);
+      if (!body) return route.abort("filenotfound");
+      return route.fulfill({
+        body,
+        contentType: MIME[path.extname(relative)] ?? "application/octet-stream",
+        headers: { "access-control-allow-origin": "*" },
+      });
+    });
+    const page = await context.newPage();
+    await page.setContent(html, { waitUntil: "load" });
+    await page.waitForFunction(() => document.documentElement.getAttribute("data-ready") === "1", null, {
+      timeout: READY_TIMEOUT_MS,
+    });
+    return await work(page);
   });
 }
 
@@ -150,37 +169,31 @@ async function reencodeImage(
   type: ImageType,
   options: { maxEdgePx: number; output: "image/png" | "image/webp"; quality?: number; upscale: boolean },
 ): Promise<{ data: Buffer; width: number; height: number } | null> {
-  return withSlot(async () => {
-    const browser = await getBrowser();
-    const context = await browser.newContext({ javaScriptEnabled: true });
-    try {
-      await context.route("**/*", (route) => route.abort("blockedbyclient"));
-      const page = await context.newPage();
-      const src = `data:${type};base64,${bytes.toString("base64")}`;
-      // Code passed as a string: bundlers must not rewrite code that runs inside the page.
-      const result = (await page.evaluate(`(async () => {
-        try {
-          const img = new Image();
-          img.src = ${JSON.stringify(src)};
-          await img.decode();
-          let w = img.naturalWidth, h = img.naturalHeight;
-          if (!w || !h) { w = 1200; h = 600; }
-          const fit = ${options.maxEdgePx} / Math.max(w, h);
-          const scale = ${JSON.stringify(options.upscale)} ? fit : Math.min(1, fit);
-          const canvas = document.createElement("canvas");
-          canvas.width = Math.max(1, Math.round(w * scale));
-          canvas.height = Math.max(1, Math.round(h * scale));
-          const ctx = canvas.getContext("2d");
-          ctx.imageSmoothingQuality = "high";
-          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-          return { data: canvas.toDataURL(${JSON.stringify(options.output)}, ${options.quality ?? 0.85}), width: canvas.width, height: canvas.height };
-        } catch (e) { return null; }
-      })()`)) as { data: string; width: number; height: number } | null;
-      if (!result || !result.data.startsWith(`data:${options.output};`)) return null;
-      return { data: Buffer.from(result.data.split(",")[1] ?? "", "base64"), width: result.width, height: result.height };
-    } finally {
-      await context.close();
-    }
+  return withContext({ javaScriptEnabled: true }, async (context) => {
+    await context.route("**/*", (route) => route.abort("blockedbyclient"));
+    const page = await context.newPage();
+    const src = `data:${type};base64,${bytes.toString("base64")}`;
+    // Code passed as a string: bundlers must not rewrite code that runs inside the page.
+    const result = (await page.evaluate(`(async () => {
+      try {
+        const img = new Image();
+        img.src = ${JSON.stringify(src)};
+        await img.decode();
+        let w = img.naturalWidth, h = img.naturalHeight;
+        if (!w || !h) { w = 1200; h = 600; }
+        const fit = ${options.maxEdgePx} / Math.max(w, h);
+        const scale = ${JSON.stringify(options.upscale)} ? fit : Math.min(1, fit);
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.max(1, Math.round(w * scale));
+        canvas.height = Math.max(1, Math.round(h * scale));
+        const ctx = canvas.getContext("2d");
+        ctx.imageSmoothingQuality = "high";
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        return { data: canvas.toDataURL(${JSON.stringify(options.output)}, ${options.quality ?? 0.85}), width: canvas.width, height: canvas.height };
+      } catch (e) { return null; }
+    })()`)) as { data: string; width: number; height: number } | null;
+    if (!result || !result.data.startsWith(`data:${options.output};`)) return null;
+    return { data: Buffer.from(result.data.split(",")[1] ?? "", "base64"), width: result.width, height: result.height };
   });
 }
 
