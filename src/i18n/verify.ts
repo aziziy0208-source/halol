@@ -45,9 +45,6 @@ const de = {
   noDocument: "Das Zertifikatsdokument ist nur für gültige Zertifikate abrufbar.",
   legacy:
     "Dieses Zertifikat wurde vor Einführung der Online-Prüfung ausgestellt. Maßgeblich ist das Originaldokument; die Angaben oben stammen aus dem Zertifikatsregister der WHU.",
-  warningTitle: "Wichtig",
-  warning:
-    "Maßgeblich sind ausschließlich die Angaben auf dieser Seite. Stimmt das Dokument, das Ihnen vorliegt, nicht mit diesen Angaben überein, kontaktieren Sie uns bitte:",
   checkedAt: (when: string) => `Geprüft am ${when}`,
   notFound: {
     label: "NICHT GEFUNDEN",
@@ -113,9 +110,6 @@ const en: VerifyTexts = {
   noDocument: "The certificate document is only available for valid certificates.",
   legacy:
     "This certificate was issued before online verification was introduced. The original document applies; the details above come from WHU's certificate register.",
-  warningTitle: "Important",
-  warning:
-    "Only the information on this page is authoritative. If the document you have does not match it, please contact us:",
   checkedAt: (when: string) => `Checked on ${when}`,
   notFound: {
     label: "NOT FOUND",

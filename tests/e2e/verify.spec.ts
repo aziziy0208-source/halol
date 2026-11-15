@@ -42,7 +42,7 @@ test("public verification: /v/{token}, check by number, rate limits, scan log", 
     "number, holder, country, products and standard shown",
   );
   check(body.includes("Zertifizierungsstelle") && body.includes("Rupert-Mayer-Str.44"), "certification body WHU shown");
-  check(/Geprüft am \d{2}\.\d{2}\.\d{4}, \d{2}:\d{2}/.test(body) && body.includes("Maßgeblich sind ausschließlich"), "check time and authenticity warning shown");
+  check(/Geprüft am \d{2}\.\d{2}\.\d{4}, \d{2}:\d{2}/.test(body) && !body.includes("Wichtig"), "check time shown, no warning box on a valid certificate");
   check((await page.locator("main").getAttribute("lang")) === null && (await page.locator("div[lang='de']").count()) === 1, "page content marked lang=de");
   check(!(await page.content()).includes(active.id), "internal certificate id is not exposed");
   const noOverflow = await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth);

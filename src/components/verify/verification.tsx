@@ -263,7 +263,6 @@ export function VerificationResult({ cert, lang, checkedAt }: { cert: PublicCert
         )}
       </Card>
 
-      <Warning lang={lang} title={t.warningTitle} text={t.warning} />
       <CheckedAt lang={lang} at={checkedAt} />
     </>
   );
