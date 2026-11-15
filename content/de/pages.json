@@ -1,0 +1,25 @@
+{
+  "datenschutz": {
+    "title": "Datenschutz",
+    "subtitle": [
+      "Datenschutzerklärung"
+    ],
+    "message": "Die Datenschutzerklärung wird derzeit aktualisiert.",
+    "paragraphs": [
+      "Bei Fragen zum Datenschutz wenden Sie sich bitte an info@halal-zertifizierung.com."
+    ],
+    "placeholder": true
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": [
+      "Seite nicht gefunden"
+    ],
+    "message": "Die angeforderte Seite existiert nicht.",
+    "paragraphs": [],
+    "link": {
+      "label": "Zur Startseite",
+      "href": "/"
+    }
+  }
+}

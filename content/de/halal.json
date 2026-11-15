@@ -1,0 +1,232 @@
+{
+  "id": "halal",
+  "parallax": {
+    "image": "p-1",
+    "text": "„Halal“ {{(ḥalāl, arabisch حلال)}} – oder im Türkischen {{„Helal“}}."
+  },
+  "title": "Halal",
+  "subtitle": [
+    "Was ist Halal?"
+  ],
+  "message": "„Halal“ {{(halāl, arabisch حلال)}} – oder im Türkischen {{„Helal“}}.",
+  "cards": [
+    {
+      "icon": "check",
+      "color": "green",
+      "title": "Halal{{حلال}}",
+      "text": "ist ein arabisches Wort und kann mit „erlaubt“ und „zulässig“ übersetzt werden."
+    },
+    {
+      "icon": "warning",
+      "color": "yellow",
+      "title": "makruh {{(unerwünscht)}}",
+      "text": "Diese Dinge sind nicht ausdrücklich verboten, tendieren jedoch in Richtung haram."
+    },
+    {
+      "icon": "remove",
+      "color": "red",
+      "title": "haram {{(حرام)}}",
+      "text": "verbotenen"
+    }
+  ],
+  "rows": [
+    {
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Halal"
+          },
+          {
+            "type": "heading",
+            "level": 6,
+            "text": "Was ist Halal? Halal Definition"
+          },
+          {
+            "type": "paragraph",
+            "text": "„Halal“ (halāl, arabisch حلال) – oder im Türkischen „Helal“. Halal (arabisch ‏حلال‎, halāl) ist ein arabisches Wort und kann mit „erlaubt“ und „zulässig“ übersetzt werden. Die Bedeutung von Halal ist „das Zulässige, Erlaubte und Gestattete”. Somit umfasst Halal alle Dinge und Handlungen, die aus islamischer Sicht gestattet, zulässig und islamkonform sind. Es bezeichnet alle Dinge und Handlungen, die nach islamischem Recht erlaubt oder zulässig sind. Als Dritte der fünf Kategorien menschlicher Handlungen in der islamischen Rechtswissenschaft steht sie zwischen haram (‏حرام‎), verbotenen, und fard (‏فرض‎), pflichtmäßigen Handlungen. Zwischen halal und haram gibt es eine Grauzone, die makruh (‏مكروه‎) genannt wird. Makruh (verpönt/unerwünscht) bezeichnen alle Dinge, die nicht ausdrücklich verboten sind, jedoch in Richtung haram tendieren. Auch diese Grauzone gilt es für Muslime vorsichtshalber zu meiden."
+          },
+          {
+            "type": "paragraph",
+            "text": "Ähnlich den Bio-Siegeln oder auch den jüdischen Kosher-Siegeln für Speisen gibt es sogenannte Halal-Zertifikate im Handel. Erreicht werden soll damit die Kennzeichnung von Produkten, bei deren Herstellung die Einhaltung der Halal-Regeln sichergestellt ist."
+          },
+          {
+            "type": "paragraph",
+            "text": "„Halal - Helal“ – steht für „erlaubt“, „zulässig“ oder „rein“. Als Halal werden alle Dinge und Taten bezeichnet, die nach islamischem Recht erlaubt oder zulässig sind. Im Kontrast hierzu steht"
+          },
+          {
+            "type": "paragraph",
+            "text": "Haram (verbotenen, unrein). Der Grenzbereich zwischen Halal und Haram wird mit"
+          },
+          {
+            "type": "paragraph",
+            "text": "Makruh (unerwünscht) beschrieben. Lebensmittel oder andere Aspekte, die hierunter fallen, sind nicht ausdrücklich verboten, tendieren jedoch in Richtung Haram. Muslime sollten sie daher komplett meiden. Die Frage nach Halal umfasst aber nicht nur Lebensmittel, sondern auch Lebensmittelzusatzstoffe oder Verpackungsmaterialen bis hin zum Transport der Produkte. Halal wird daher zu einem Konzept, welches die Verbesserung des Lebensstandards und Harmonie zwischen Menschen und Natur anstrebt."
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Religiöser Hintergrund"
+          },
+          {
+            "type": "paragraph",
+            "text": "Allah (Der Gepriesene und Erhabene) teilt im Quran mit, was verboten wurde: Die Speisevorschriften sind im Koran und in der Sunna geregelt. Grundsätzlich gilt, dass alle Lebensmittel erlaubt sind, mit Ausnahme solcher, die ausdrücklich bzw. eindeutig verboten wurden. Einem Muslim ist das Essen von Schweinefleisch und dessen Nebenprodukten, der Genuss von berauschenden Getränken (Alkohol) und von Blut verboten. Es dürfen nur Tiere gegessen werden, die für den Konsum zulässig sind, regelgerecht geschlachtet wurden und nicht bereits verendet waren. Ein nichtgeschlachtetes Tier ist dann erlaubt, wenn es von eigens dafür abgerichteten Jagdtieren erlegt wurde, jedoch nicht von wilden Raubtieren unbekannter Herkunft und Gesundheit. Verboten sind ferner Opfertiere fremder Religionen."
+          },
+          {
+            "type": "heading",
+            "level": 6,
+            "text": "Im Koran heißt es dazu in Sure 5, Vers 3:"
+          },
+          {
+            "type": "paragraph",
+            "text": "Verboten ist euch das von selbst Verendete sowie Blut und Schweinefleisch und das, worüber ein anderer Name angerufen ward als Allahs; das Erdrosselte; das zu Tode Geschlagene; das zu Tode Gestürzte oder Gestoßene und das, was reißende Tiere angefressen haben, außer dem, was ihr geschlachtet habt; und das, was auf einem Altar (als Götzenopfer) geschlachtet worden ist. (..) Wer aber durch Hungersnot gezwungen wird, ohne sündhafte Neigung – so ist Allah Allverzeihend, Barmherzig.“"
+          },
+          {
+            "type": "paragraph",
+            "text": "Wie es dem Vers zu entnehmen ist, verlangt der Islam von den Muslimen, dass sie sich an bestimmte Speise-, Trink- und Schlachtvorschriften halten."
+          },
+          {
+            "type": "paragraph",
+            "text": "Folgendes wird vom Prophet Muhammed (Friede sei mit ihm) überliefert:"
+          },
+          {
+            "type": "paragraph",
+            "text": "„Das Erlaubte ist offenkundig, und das Verbotene ist offenkundig, und zwischen den beiden gibt es zweifelhafte Dinge über die viele Menschen keine Kenntnis besitzen. Wer sich davor fern hält, hat sich somit freigesprochen (von Schuld). Und diejenigen, die in diesen Bereich fallen, ist er in Haram gefallen.”"
+          },
+          {
+            "type": "paragraph",
+            "text": "Das traditionelle betäubungslose Schlachten, das Schächten, wird in den meisten Ländern praktiziert und von den meisten Muslimen bevorzugt. Obwohl die Betäubung mit dem islamischen Recht Fiqh vereinbar ist, wie das die muslimischen Gelehrten bestätigt haben, wird es von den meisten Muslimen nicht akzeptiert, da sie befürchten, dass die Tiere die Betäubung nicht überleben."
+          },
+          {
+            "type": "paragraph",
+            "text": "Manche Traditionen berufen sich auf den Sure 5, Vers 5 und sagen, auch von Christen oder Juden Geschlachtetes sei erlaubt: Heute sind euch alle guten Dinge erlaubt. Und die Speise derer, denen die Schrift gegeben wurde, ist euch erlaubt, wie auch eure Speise ihnen erlaubt ist. (..)"
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Was ist „Halal“, was „Haram“?"
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Was ist „Haram“?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Harām (arabisch ‏ حرام‎, harām) ist ein arabisches Adjektiv, das im Islam alles dasjenige bezeichnet, was nach der Scharia \"verboten, unverletzlich, geheiligt\" ist. In seiner Mehrdeutigkeit entspricht es im Deutschen am ehesten dem Konzept des Tabu."
+          },
+          {
+            "type": "paragraph",
+            "text": "Das Gegenteil von harām ist halāl (‏حلال‎), was das nach der Scharia Erlaubte bezeichnet. Abzugrenzen ist das Adjektiv harām von dem arabischen Substantiv Haram, das einen heiligen Bezirk kennzeichnet."
+          },
+          {
+            "type": "paragraph",
+            "text": "Als Begriff für \"Verbotenes\" begegnet der Begriff harām schon im Koran. So werden in Sure 16:116 die Menschen aufgefordert, nicht mit lügnerischer Zunge zu behaupten, dass das Eine erlaubt (halāl) und dass Andere verboten (harām) sei. Nach islamischer Auffassung begeht ein Muslim mit der Ausführung einer vom Koran oder von der Rechtslehre als harām eingestufter Tat eine Sünde. In diesem Sinne ist harām von dem Adjektiv mamnu' ‏ممنوع ‎/ mamnūʿ abzugrenzen, das im weltlichen Recht Verbotenes bezeichnet."
+          },
+          {
+            "type": "paragraph",
+            "text": "Harām ist die Letzte der fünf Kategorien menschlicher Handlungen in der islamischen Rechtswissenschaft."
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Was ist „Makruh“?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Als makruh (arabisch ‏مكروه‎, makrūh) bezeichnet man im Islam Handlungen, deren Tun nach religiöser Auffassung unbeliebt ist und die deshalb vermieden werden sollten. Nach islamischer Überlieferung wird der Muslim zwar für das Ausführen unbeliebter Handlungen nicht bestraft, für ihr Unterlassen hingegen jedoch belohnt."
+          },
+          {
+            "type": "paragraph",
+            "text": "Sie ist die Vierte der fünf Kategorien menschlicher Handlungen in der islamischen Rechtswissenschaft."
+          },
+          {
+            "type": "paragraph",
+            "text": "Zu den unbeliebten Taten zählen beispielsweise die Verschwendung von Wasser (u.a. bei den rituellen Waschungen) und das Missachten von beliebten oder bevorzugten Taten – sowohl während als auch außerhalb der Gottesdienste."
+          },
+          {
+            "type": "paragraph",
+            "text": "Allgemein wird jede übertriebene Handlung als unbeliebt angesehen."
+          },
+          {
+            "type": "paragraph",
+            "text": "Das Rauchen ist nach einigen Gelehrten mindestens makruh, andere wiederum bezeichnen es sogar als haram."
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Was ist „Fard“?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Fard (arabisch ‏فرض ‎, fard \"Pflicht\") auch arabisch ‏فريضة ‎, farīda bedeutet „religiöse Pflicht“, „(göttliche) Verordnung“, „Verordnung“. Fard ist die Summe derjenigen religiösen Verpflichtungen, die Muslime im Ritualleben bedingungslos zu erfüllen haben. Das Verb dazu ist farada bzw. iftarada und kommt entsprechend in der Bedeutung von: „jemandem etwas als (religiöse) Pflicht auferlegen“, „verordnen“, „für verbindlich erklären“ sowohl im Koran als auch im Hadith vor."
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Was ist „Sunna“?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Sunna (arabisch‏سنة ‎‚ Brauch, gewohnte Handlungsweise, überlieferte Norm‘) Pl. sunan (‏سنن‎) ist ein Begriff, der in vorislamischer Zeit die Sitten, Bräuche, Werte und Normen der verschiedenen arabischen Stämme bezeichnete, im Laufe der Formierung des Islams aber eine religiöse Bedeutung erhielt, indem er zur Kurzbezeichnung für die zu befolgende sunnat an-nabī, die „Handlungsweise des Propheten (Hz. Mohammed)“, wurde."
+          },
+          {
+            "type": "paragraph",
+            "text": "In diesem Sinne wird Sunna insbesondere in der islamischen Jurisprudenz und Traditionswissenschaft verwendet. Im Laufe der Zeit haben sich verschiedene Verschiebungen in der Bedeutung des Begriffs ergeben. Das zugehörige Verb ist ‏استنّ سنّ, sanna / istanna ‚etw. vorschreiben, etw. einführen."
+          }
+        ]
+      ]
+    },
+    {
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Verboten sind:"
+          },
+          {
+            "type": "list",
+            "icon": "remove",
+            "items": [
+              "Aus Pflanzen gewonnene Lebensmittel sind grundsätzlich „halal“, ausgenommen sind berauschende und toxische Produkte. „haram“ umfasst alle Dinge, die Muslime nicht verzehren dürfen."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Hinsichtlich der Ernährung gelten nachfolgenden Hauptkategorien als „haram“ verboten:"
+          },
+          {
+            "type": "list",
+            "icon": "remove",
+            "items": [
+              "Schweine, Hunde, Schlangen, Affen, fleischfressende Tiere, z. B. Löwen, Tiger, Bären, Raubvögel, z. B. Adler, Geier, Ratten, Skorpione, nicht halal geschächtetes Tier, Reptilien, Amphibien, Insekten, krepierte Tiere, Blut, Rauschmittel, Alkohol und alkoholische Getränke.",
+              "Zu „Schwein“ zählen alle Lebensmittel und Zutaten, die Schweinebestandteile enthalten können oder daraus gewonnen werden, z. B. Gelatine. Schweinefleisch ist verboten, da das Schwein als Allesfresser auch Abfälle und Kot frisst. Nach dem Koran soll der Mensch nur das essen, was „gut“ ist."
+            ]
+          }
+        ],
+        [
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "list",
+            "icon": "remove",
+            "items": [
+              "„haram“ ist außerdem das Fleisch von Greifvögeln, Landtieren ohne Ohren z. B. Schlangen sowie Wildschweinen. Pferdefleisch und Eselfleisch sind ebenfalls verboten, da die Tiere zum Lastentragen bestimmt sind. Es darf nur das Fleisch von geschlachteten Tieren verzehrt werden, d. h. das Fleisch darf nicht von Tieren stammen, die krepiert sind. Verboten ist auch der Verzehr von Opfertieren fremder Religionen. Ausdrücklich erlaubt ist der Verzehr von Fischen. Neben den verbotenen Lebensmitteln tierischer Herkunft fallen unter „haram“ auch berauschende und toxische Produkte pflanzlichen Ursprungs sowie Alkohol und alkoholische Getränke.",
+              "Neben den verbotenen Lebensmitteln tierischer Herkunft fallen unter „haram“ auch berauschende und toxische Produkte pflanzlichen Ursprungs sowie Alkohol und alkoholische Getränke."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Die Einteilung in „haram“ und „halal“ ist nicht immer so einfach. Durch die vielfältigen Vorgänge bei der Herstellung und Zubereitung von Lebensmitteln kann es zu Verunreinigungen kommen, das erlaubte Lebensmittel „haram“ werden lassen. Sie können durch verbotene Zusätze, wie beispielsweise Gelatine aus Schweinebestandteilen, Emulgatoren, Aromastoffe, Farbstoffe verunreinigt werden, oder auch unzureichend verpackt zusammen transportiert oder gelagert werden."
+          }
+        ]
+      ]
+    }
+  ]
+}

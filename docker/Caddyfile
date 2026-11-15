@@ -1,0 +1,25 @@
+# Reverse proxy in front of the app: automatic HTTPS (Let's Encrypt), HTTP → HTTPS.
+# DOMAIN and ACME_EMAIL come from .env (see docker-compose.yml).
+{
+	email {$ACME_EMAIL}
+}
+
+{$DOMAIN} {
+	encode zstd gzip
+
+	# The app sets HSTS and the other security headers itself (next.config.ts).
+	# Caddy replaces any client-sent X-Forwarded-For with the real peer address,
+	# which the app relies on for rate limits and IP hashing.
+	reverse_proxy app:3000
+
+	log {
+		# Access log without query strings or client IPs (DSGVO); errors only.
+		output stderr
+		level ERROR
+	}
+}
+
+# Optional second name (e.g. www.) → canonical domain.
+{$REDIRECT_DOMAIN:www.localhost} {
+	redir https://{$DOMAIN}{uri} permanent
+}

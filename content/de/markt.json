@@ -1,0 +1,73 @@
+{
+  "id": "halal-markt",
+  "title": "Der Halalmarkt",
+  "subtitle": [
+    "Zahlen, Daten und Fakten"
+  ],
+  "message": "Halal-Produkte machen derzeit {{20 %}} der weltweiten Nahrungsmittelproduktion aus.",
+  "stats": [
+    {
+      "icon": "globe",
+      "color": "lightblue",
+      "title": "Daten {{weltweit}}",
+      "paragraphs": [
+        "Mit einem weltweiten Kundenstamm\nvon 1,8 Milliarden Muslimen gehört Halal\nheute zu den am schnellsten wachsenden globalen Märkten.",
+        "Gleichzeitig stellen Muslime mit etwa 1,84% jährlich\ndie am stärksten wachsende Bevölkerungsgruppe dar.",
+        "Es ist zudem eine aufstrebende Marktkraft,\ndie nicht-Muslime mit ihrem gesunden,\nhygienischen und frei von Verunreinigung basierenden\nPrinzipien in der Nahrungsmittelproduktion anzieht.",
+        "Das Volumen von Halal-Produkten wird auf rund\n2,1-2,3 Billionen US-Dollar geschätzt.",
+        "Dabei entfallen ca. 675-700 Milliarden\nUS-Dollar auf den Nahrungsmittelsektor."
+      ]
+    },
+    {
+      "icon": "signal",
+      "color": "green",
+      "title": "Daten {{Europa}}",
+      "paragraphs": [
+        "In Europa wird der Halal-Markt auf 70 Milliarden Euro geschätzt.",
+        "Allein in Frankreich ist die Branche 7,5 Milliarden Euro,\nwomit sie sogar den Umsatz mit Bio-Waren übertrifft.",
+        "In Deutschland liegt das Volumen bei etwa 5 Milliarden Euro,\nwobei ein großer Teil auf Fleisch- und Fischprodukte entfällt."
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Geschäftsgebiete - Industriebereiche"
+          },
+          {
+            "type": "paragraph",
+            "text": "Die WHU hat sich zum Ziel gesetzt, jedem Kunden und seinen individuellen Bedürfnissen im Prozess der Halal-Zertifizierung Rechnung zu tragen. Die WHU konzentriert sich bei der Halal-Zertifizierung auf den Bereich Lebensmittel, Kosmetik und bietet Beratung und Schulungen an. Eine Halal-Zertifizierung hat viele Vorteile, die in der Produktion von Lebensmitteln und Kosmetik zu einem respektvollen Umgang zwischen Mensch, Tier und Natur führen. Es wird nachhaltig und wirtschaftlich verantwortungsvoll produziert."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Halal-Zertifizierung die Unternehmen aus folgenden Geschäftsgebieten:"
+          },
+          {
+            "type": "list",
+            "icon": "dot",
+            "items": [
+              "Lebensmittelindustrie",
+              "Chemie",
+              "Pharmazie und Medizin",
+              "Kosmetikindustrie",
+              "Schlachthöfe",
+              "Gesundheitswesen, Krankenhäuser, Reha",
+              "Handel und Dienstleistung",
+              "Bedarfsgegenstände",
+              "Bildung, Schulen, Kindergarten",
+              "Hotel- und Gastgewerbe"
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}

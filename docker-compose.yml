@@ -1,0 +1,135 @@
+# Local development:   docker compose up -d postgres storage   (then `npm run dev` on the host)
+# Production / full stack: docker compose up -d --build   (see docs/deploy.md)
+#   caddy  → HTTPS on :80/:443 for $DOMAIN, proxies to app
+#   backup → daily database dump + storage copy into $BACKUP_DIR
+# Database, storage and app ports bind to 127.0.0.1 only; only Caddy is public.
+
+name: whu-halal
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-whu}
+      POSTGRES_USER: ${POSTGRES_USER:-whu}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # S3-compatible private object storage (certificate PDFs, signatures, stamps).
+  # Replaces MinIO, whose community images are no longer published.
+  # --single-node and --default-bucket create the layout, bucket and key on first start.
+  storage:
+    image: dxflrs/garage:v2.5.0
+    restart: unless-stopped
+    command: ["/garage", "server", "--single-node", "--default-bucket"]
+    environment:
+      GARAGE_RPC_SECRET: ${GARAGE_RPC_SECRET:?set GARAGE_RPC_SECRET in .env}
+      GARAGE_ADMIN_TOKEN: ${GARAGE_ADMIN_TOKEN:?set GARAGE_ADMIN_TOKEN in .env}
+      GARAGE_DEFAULT_ACCESS_KEY: ${S3_ACCESS_KEY_ID:?set S3_ACCESS_KEY_ID in .env}
+      GARAGE_DEFAULT_SECRET_KEY: ${S3_SECRET_ACCESS_KEY:?set S3_SECRET_ACCESS_KEY in .env}
+      GARAGE_DEFAULT_BUCKET: ${S3_BUCKET:-whu-files}
+    volumes:
+      - ./docker/garage.toml:/etc/garage.toml:ro
+      - garage-meta:/var/lib/garage/meta
+      - garage-data:/var/lib/garage/data
+    ports:
+      - "127.0.0.1:3900:3900"
+
+  # Applies pending Prisma migrations, then exits. The app starts only after it succeeds.
+  # Seed: docker compose run --rm migrate npx prisma db seed
+  migrate:
+    build:
+      context: .
+      target: tools
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-whu}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-whu}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  app:
+    build:
+      context: .
+      target: runner
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-whu}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-whu}
+      S3_ENDPOINT: http://storage:3900
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      storage:
+        condition: service_started
+    ports:
+      - "127.0.0.1:3000:3000"
+
+  # Public entry point: automatic HTTPS certificates (Let's Encrypt) for $DOMAIN.
+  caddy:
+    image: caddy:2.11-alpine
+    restart: unless-stopped
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
+      REDIRECT_DOMAIN: ${REDIRECT_DOMAIN:-www.localhost}
+      ACME_EMAIL: ${ACME_EMAIL:-}
+    volumes:
+      - ./docker/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    depends_on:
+      app:
+        condition: service_healthy
+
+  # Daily backups (spec §9): pg_dump + copy of the object storage → $BACKUP_DIR on the host.
+  backup:
+    build: ./docker/backup
+    restart: unless-stopped
+    # Optional: RCLONE_CONFIG_OFFSITE_* for the off-site copy (kept out of .env so the
+    # backup container never sees the app's secrets).
+    env_file:
+      - path: ./backup.env
+        required: false
+    environment:
+      TZ: ${BACKUP_TZ:-Europe/Berlin}
+      BACKUP_TIME: ${BACKUP_TIME:-02:30}
+      BACKUP_KEEP_DAYS: ${BACKUP_KEEP_DAYS:-30}
+      BACKUP_ON_START: ${BACKUP_ON_START:-false}
+      BACKUP_RCLONE_REMOTE: ${BACKUP_RCLONE_REMOTE:-}
+      PGHOST: postgres
+      POSTGRES_DB: ${POSTGRES_DB:-whu}
+      POSTGRES_USER: ${POSTGRES_USER:-whu}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      S3_ENDPOINT: http://storage:3900
+      S3_REGION: ${S3_REGION:-garage}
+      S3_BUCKET: ${S3_BUCKET:-whu-files}
+      S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID}
+      S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY}
+    volumes:
+      - ${BACKUP_DIR:-./backups}:/backups
+    depends_on:
+      postgres:
+        condition: service_healthy
+      storage:
+        condition: service_started
+
+volumes:
+  postgres-data:
+  garage-meta:
+  garage-data:
+  caddy-data:
+  caddy-config:

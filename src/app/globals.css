@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens taken from the reference site (assets/css/blue.css, base.css,
+ * layout.css): accent #0099cc, body text #545454, headings #1b1b1b,
+ * hairlines #e7e7e7, slider panel #e3e3e3, icon colours .list1–.list5.
+ * Fonts: Oswald (headings), Open Sans (body) — self-hosted via next/font.
+ */
+@theme {
+  --color-brand: #0099cc;
+  /* Same blue, darkened for small text: 4.6:1 on white (WCAG AA); #0099cc is 3.3:1.
+     Borders, icons and large display text keep the original #0099cc. */
+  --color-brand-ink: #007eaa;
+  --color-ink: #545454;
+  --color-heading: #1b1b1b;
+  --color-rule: #e7e7e7;
+  --color-panel: #e3e3e3;
+
+  --color-accent-green: #19ff37;
+  --color-accent-orange: #ffca6e;
+  --color-accent-lightblue: #6ec8ff;
+  --color-accent-yellow: #ffe100;
+  --color-accent-red: #be0000;
+
+  --font-sans: var(--font-open-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: var(--font-oswald), Helvetica, Arial, sans-serif;
+  --font-arabic: var(--font-arabic-face), "Geeza Pro", "Noto Naskh Arabic", serif;
+}
+
+/* Base element styles live in the base layer so Tailwind utilities can override them. */
+@layer base {
+  /* Anchor targets land right below the 74px sticky menu bar. */
+  html {
+    scroll-padding-top: 74px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background: #fff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-heading);
+    font-family: var(--font-display);
+    font-weight: 300;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* Diagonal-line overlay of the original theme (assets/theme/overlay.png, 5×5 px),
+   inlined so it needs no extra request and is available at first paint. */
+@utility bg-pattern {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAQUlEQVR4AVyKsREAIAgDOVodioqJGEN7x2EoKyqDBeeZuxT5PNMTVW0isgpi9IiYcOzCBBgDNXff/AMclGYZCbIHAAD//xWpVVwAAAAGSURBVAMAxKkVLwWAr50AAAAASUVORK5CYII=");
+}
+
+/* Partner slider: captions fly in from the left, logos from the right
+   (the original Revolution Slider "sfl" / "lfr" effects). */
+@keyframes slider-caption-in {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slider-logo-in {
+  from {
+    opacity: 0;
+    transform: translateX(48px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.slider-caption {
+  animation: slider-caption-in 650ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.slider-logo {
+  animation: slider-logo-in 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 200ms both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider-caption,
+  .slider-logo {
+    animation: none;
+  }
+}

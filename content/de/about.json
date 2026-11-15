@@ -1,0 +1,104 @@
+{
+  "id": "about",
+  "title": "Über Uns",
+  "subtitle": [
+    "World Halal Union",
+    "Welt Halal Union"
+  ],
+  "message": "Die {{WHU}} hat sich zum Ziel gesetzt, jedem Kunden und seinen individuellen Bedürfnissen im Prozess der Halal-Zertifizierung Rechnung zu tragen. Die {{WHU}} konzentriert sich bei der Halal-Zertifizierung auf den Bereich Lebensmittel, Kosmetik und bietet Beratung und Schulungen an. Eine Halal-Zertifizierung hat viele Vorteile, die in der Produktion von Lebensmitteln und Kosmetik zu einem respektvollem Umgang zwischen Mensch, Tier und Natur führen. Es wird nachhaltig und wirtschaftlich verantwortungsvoll produziert.",
+  "rows": [
+    {
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Unabhängig"
+          },
+          {
+            "type": "paragraph",
+            "text": "WHU ist eine unabhängige und akkreditierte Prüf- und Zertifizierungsstelle für Halal- Produkte. Mit technisch-wissenschaftlicher Ausrichtung hat sich unsere Zertifizierungsorganisation darauf spezialisiert, Produkte und Produktionssysteme der Lebensmittelindustrie nach den islamischen Speisevorschriften und Reinheitsgeboten (Halal-Richtlinien) unabhängig zu prüfen und zu zertifizieren. Mit unserem qualitätsbasierten Zertifizierungssystem bieten wir Verbrauchern und Unternehmen gleichermaßen eine gesicherte und glaubwürdige Zertifizierung von Halal-Produkten nach hohen anerkannten Standards an."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Unternehmensphilosophie"
+          },
+          {
+            "type": "paragraph",
+            "text": "Es ist unsere Unternehmensphilosophie, dass die Halal-Zertifizierung den Konsumenten gewährleisten muss, dass die Produkte unbedenklich und für den Verzehr geeignet sind. Für Muslime bietet unsere Halal-Zertifizierung die Garantie, dass die Produkte nach islamischen Richtlinien hergestellt worden sind. Für Nicht-Muslime sind Halal Produkte einfach aufgrund des Konzepts von halal und gesund Qualitätsprodukte, da wir allen Halal-Zertifizierungsbewerbern nachdrücklich raten, die GMP und HACCP Anforderungen zu erfüllen. Folglich sind die durch WHU als Halal zertifizierte Produkte unbedenklich für den Verzehr oder Gebrauch, nahrhaft und qualitativ hochwertig."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "qualitaet",
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "HALAL-Standards"
+          },
+          {
+            "type": "paragraph",
+            "text": "Das Ergebnis unserer Kooperation mit den OIC/SMIIC Halal Standards garantiert, dass Produkte und Dienstleistungen, die durch WHU zertifiziert werden, eine permanente Anerkennung und weltweit eine hohe Akzeptanz erhalten. Dennoch vergleichen wir kontinuierlich unsere Prüfungen und Zertifizierungsprozess mit anderen anerkannten Standards, um unsere fortschrittliche Position weiterhin aufrechtzuerhalten. Dies beinhaltet eine fortlaufende Aktualisierung von unseren Methoden und Qualitätsstufen, die sowohl auf international anerkannten Standards im Bereich Lebensmittelsicherheit basieren als auch auf Anforderungen, die durch die Halal Richtlinien bestimmt werden."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "HALAL-Standards"
+          },
+          {
+            "type": "paragraph",
+            "text": "Es gibt keinen alleinigen internationalen anerkannten Standard. Von Land zu Land differieren die Standards. Wir zertifizieren Halal nach folgenden Standards:"
+          },
+          {
+            "type": "list",
+            "icon": "check",
+            "items": [
+              "OIC/SMIIC 1:2012 (DHB-TS OIC/SMIIC 1:2012)",
+              "HDC – Halal Development Council - Malaysia",
+              "DHC-Malaysia - Halal Industry Development Corporation",
+              "Malaysia (JAKIM)",
+              "Indonesia (MUI)",
+              "Vereinigte Arabische Emirate (VAE)-UAE",
+              "Singapur (MUIS)"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Unsere Qualitätspolitik"
+          },
+          {
+            "type": "paragraph",
+            "text": "JEDER KUNDE IST EINZIGARTIG Unser Prinzip und Ziel ist die ständige Weiterentwicklung und Verbesserung der Methoden für die Leistungserbringung, die wir unseren Kunden im Rahmen der Zertifizierung von Halal Management Systemen anbieten. Parallel zu den sich heutzutage schnell ändernden Bedingungen in Organisation und Technik, wird unser Personal geschult, um sich für alle Bereiche bestens qualifiziert, unabhängig und neutral zu zeigen. Die Schulungen vermitteln die Regeln und Gesetzmäßigkeiten, die in den internationalen Standards und Richtlinien wie ISO/IEC 17021, ISO 19011, EA 2/17 gefordert sind. Mit diesen Kenntnissen versehen, bieten wir einen pünktlichen, schnellen und zuverlässigen Service an, zum Vorteil eines jeden unserer Kunden. Die Basis unserer Politik bildet die Kundenorientierung für einen schnellen Service von hohem Qualitätslevel."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Unser primäres Ziel"
+          },
+          {
+            "type": "paragraph",
+            "text": "Unser primäres Ziel dabei ist es, mit unserem hervorragend ausgebildetem Personal und qualifiziertem Auditorenpool, sowie Personen mit branchenspezifischer Erfahrung in den betreffenden Bereichen Audits durchzuführen, die dem Kunden helfen, bereits durch den Zertifizierungsprozess einen Mehrwert zu erzielen. Wir planen, mit dieser Überzeugung das führende Unternehmen der Branche zu werden. Wir sind uns dessen bewusst, dass wir dieses Ziel nur mit der Teilnahme aller internen und externen Mitarbeiter erreichen können. Wir arbeiten ständig daran, die Qualifikation aller Mitarbeiter, die Wirksamkeit der Prozesse und des Auditor-Experten-Pools zu steigern, indem wir die Verfahren, die zu unserem Tätigkeitsbereich gehören, an einem auf Leistungsmessung beruhendem System orientieren. Unser Unternehmen ist sich weiterhin bewusst, dass jede Tätigkeit ein Teil der kontinuierlichen Verbesserung ist und verspricht, mit dem Slogan “Jeder Kunde ist einzigartig” in der Geschäftsführung den Systemansatz und im Entscheidungsprozess die Prinzipien von Wahrheit und Neutralität anzuwenden."
+          }
+        ]
+      ]
+    }
+  ]
+}

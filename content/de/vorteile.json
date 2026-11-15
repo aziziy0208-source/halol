@@ -1,0 +1,60 @@
+{
+  "id": "vorteile",
+  "title": "Vorteile für Unternehmen",
+  "subtitle": [
+    "zusätzliche Qualitätsmerkmale"
+  ],
+  "message": "Die hohen Anforderungen an eine Halal Zertifizierung machen die Produkte für alle Verbraucher interessant, die Werte auf {{Qualität}} und Kontrolle legen.",
+  "stats": [
+    {
+      "icon": "cog",
+      "color": "dark",
+      "title": "Daten {{weltweit}}",
+      "paragraphs": [
+        "Mit einem weltweiten Kundenstamm\nvon 1,8 Milliarden Muslimen gehört Halal\nheute zu den am schnellsten wachsenden globalen Märkten.",
+        "Gleichzeitig stellen Muslime mit etwa 1,84% jährlich\ndie am stärksten wachsende Bevölkerungsgruppe dar.",
+        "Es ist zudem eine aufstrebende Marktkraft,\ndie nicht-Muslime mit ihrem gesunden,\nhygienischen und frei von Verunreinigung basierenden\nPrinzipien in der Nahrungsmittelproduktion anzieht.",
+        "Das Volumen von Halal-Produkten wird auf rund\n2,1-2,3 Billionen US-Dollar geschätzt.",
+        "Dabei entfallen ca. 675-700 Milliarden\nUS-Dollar auf den Nahrungsmittelsektor."
+      ]
+    },
+    {
+      "icon": "cogs",
+      "color": "dark",
+      "title": "Daten {{Europa}}",
+      "paragraphs": [
+        "In Europa wird der Halal-Markt auf 70 Milliarden Euro geschätzt.",
+        "Allein in Frankreich ist die Branche 7,5 Milliarden Euro,\nwomit sie sogar den Umsatz mit Bio-Waren übertrifft.",
+        "In Deutschland liegt das Volumen bei etwa 5 Milliarden Euro,\nwobei ein großer Teil auf Fleisch- und Fischprodukte entfällt."
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "id": "tierschutz",
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Halal und Tierschutz, Sozialverantwortung"
+          },
+          {
+            "type": "paragraph",
+            "text": "Im Islam nimmt der Tierschutz einen sehr hohen Stellenwert ein. WHU-Deutschland geprüftes Fleisch und Fleischerzeugnisse sowie fleischhaltige Produkte stammen von Tieren, die im Einklang mit der europäischen Tierschutz-Schlachtverordnung betäubt und geschlachtet wurden sowie vollständig entblutet sind. In eine Halal-Zertifizierung auch Aspekte wie Bio, Fair-Trade, SA8000, Tierschutz und die unternehmerische Sozialverantwortung aufgenommen sind. Da Muslime ein „Ihsan“-handeln anstreben, d.h. jede Handlung auf die beste Art durchzuführen und damit Qualität in allen Dingen anwenden sollen, muss eine Halal-Zertifizierung im Grunde den gesamten Produktionsprozess vom Feld bis zum fertigen Produkt umfassen. Häufig werden Halal-Fleischprodukte durch betäubungsloses Schächten produziert. Dies ist in Deutschland nach §17 TierSchG verboten. Wer gegen diese Regelung verstößt, begeht mindestens eine Ordnungswidrigkeit."
+          }
+        ],
+        [
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Dies kann nur umgangen werden, in dem man nach §4 TierSchG eine Ausnahmegenehmigung gegen Vorlage eines Sachkundenachweises beantragt. Aus religiösen Gründen kann ebenfalls eine Ausnahmegenehmigung beantragt werden. Nach der Rechtsprechung des Bundesverfassungsgerichtes (Schächturteil) vom 23. November 2006 muss wegen der nach Art.4 des Grundgesetzes verfassungsmäßig uneingeschränkt gewährten Religions- und Glaubensfreiheit sowie aufgrund der Berufsfreiheit eines islamischen Metzgers auf Antrag eine Ausnahmegenehmigung erteilt werden, sofern das Fleisch des getöteten Tieres von Personen verzehrt wird, denen zwingende religiöse Vorschriften den Verzehr des Fleisches nicht geschächteter Tiere ausnahmslos verbieten. Das Schächten muss jedoch von einer sachkundigen Person in einem zugelassenen und registrierten Schlachtbetrieb erfolgen und vom zuständigen Veterinäramt überwacht werden."
+          }
+        ]
+      ]
+    }
+  ]
+}

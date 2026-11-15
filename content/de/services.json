@@ -1,0 +1,290 @@
+{
+  "id": "services",
+  "parallax": {
+    "image": "p-2",
+    "text": "zusätzliche Qualitätsmerkmale"
+  },
+  "title": "Services",
+  "subtitle": [
+    "unsere Dienstleistungen"
+  ],
+  "message": "Unsere Qualitätspolitik “Jeder {{Kunde}} ist {{einzigartig}}”.",
+  "cards": [
+    {
+      "icon": "comment",
+      "color": "green",
+      "title": "Beratung und {{Zertifizierung}}",
+      "text": "Halal Lebensmittelproduktion und Halal Zertifizierung"
+    },
+    {
+      "icon": "asterisk",
+      "color": "orange",
+      "title": "Untersuchungen und {{Hygienekontrollen}}",
+      "text": "Chemische und mikrobiologische Untersuchungen"
+    },
+    {
+      "icon": "eye",
+      "color": "lightblue",
+      "title": "Schulungen und {{Hygieneberatung}}",
+      "text": "Interner Audit Schulungen"
+    }
+  ],
+  "rows": [
+    {
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Halal Zertifizierungen"
+          },
+          {
+            "type": "paragraph",
+            "text": "Es begann im Jahr 1960 als Muslim Mehrheiten in verschiedenen Ländern die Forderung nach einer Regelung der Halal-Zertifizierung aufstellten und diese gesichert werden musste."
+          },
+          {
+            "type": "paragraph",
+            "text": "Die daraus resultierenden Halal-Zertifizierungs-Konzepte werden heute in muslimischen Ländern (vor allem in der OIC, Organisation für Islamische Zusammenarbeit) anerkannt und gelebt. Das unterschiedliche Verständnis über die Halal-Zertifizierung war schwer zu kontrollieren, verschiedene Standards entwickelten sich."
+          },
+          {
+            "type": "paragraph",
+            "text": "Neben einem global gelebten „gemeinsamem Verständnis“ und „einer gemeinsamen Anerkennung“ wurden mehrere Organisationen gegründet, die die Basis bildeten:"
+          },
+          {
+            "type": "list",
+            "icon": "angle",
+            "items": [
+              "Im Jahr 1999, der in Jakarta (Indonesien) gegründete World Halal Council,",
+              "2007 die Halal Integrity Alliance (\"IHI Alliance\") sowie JAKIM in Malaysia und letztendlich im Jahr 2010 die Gründung der Islamischen Organisation für Zusammenarbeit (OIC) mit dem Standard SMIIC."
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 6,
+            "text": "Der OIC/SMIIC-Standard ist werthaltiger, weil er mehr Anforderungen an der Zertifikatsnehmer stellt als bisher, es ist nicht nur ein religiöser Standard sondern hat auch folgende internationale Lebensmittelstandards integriert:"
+          },
+          {
+            "type": "list",
+            "icon": "angle",
+            "items": [
+              "CODEX STAN 1 (General standard for the labelling of prepacked foods)",
+              "CAC/RCP 1 (Recommended international code of practice general principles of food hygiene)",
+              "CAC/RCP 58 (Code of hygienic practice for meat)",
+              "ISO 22000 (Food safety management systems – Requirements for any organization in the food chain",
+              "ISO 22005 (Traceability in the feed and food chain – General principles and basic requirements for system design and implementation",
+              "Good manufacturing practice (GMP)",
+              "Good hygienic practice (GHP)",
+              "Food Safety",
+              "Genetically modified food (GMF)",
+              "Genetically modified organisms (GMO)",
+              "EU HACCP Codex"
+            ]
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Philosophie"
+          },
+          {
+            "type": "paragraph",
+            "text": "Es ist unsere Unternehmensphilosophie, dass die Halal-Zertifizierung den Konsumenten gewährleisten muss, dass die Produkte unbedenklich und für den Verzehr geeignet sind. Für Muslime bietet unsere Halal-Zertifizierung die Garantie, dass die Produkte nach islamischen Richtlinien hergestellt worden sind. Für Nicht-Muslime sind Halal Produkte einfach aufgrund des Konzepts von „Halal und Gesund“ Qualitätsprodukte, da wir allen Halal-Zertifizierungsbewerbern nachdrücklich raten, mindestens die GMP und HACCP Anforderungen zu erfüllen. Folglich sind die durch WHU als Halal zertifizierte Produkte unbedenklich für den Verzehr oder Gebrauch, nahrhaft und qualitativ hochwertig."
+          },
+          {
+            "type": "paragraph",
+            "text": "Unser Zertifizierungsprozess ist ebenfalls in Anlehnung mit den OIC/SMIIC Standards. Diese implementierten Standards erhalten kontinuierlich eine breite Anerkennung für die Aufrechterhaltung der Exzellenz im Bereich des Halal-Prüfsiegels."
+          },
+          {
+            "type": "paragraph",
+            "text": "Das Ergebnis unserer Zusammenarbeit mit den OIC/SMIIC Halal Standards garantiert, dass Produkte und Dienstleistungen, die durch WHU zertifiziert werden, eine permanente Anerkennung und weltweit eine hohe Akzeptanz erhalten."
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Zertifizierung"
+          },
+          {
+            "type": "paragraph",
+            "text": "In muslimisch geprägten Ländern wird vorausgesetzt, dass Nahrungsmittel entsprechend der religiösen Vorschriften „halal“ sind."
+          },
+          {
+            "type": "paragraph",
+            "text": "So ist es für eine Zertifizierung zwingend, beim Schlachten jedes Tieres den Namen Allahs auszusprechen."
+          },
+          {
+            "type": "paragraph",
+            "text": "Mit dem Zertifikat sichert der Hersteller dem Kunden zu, dass das Nahrungsmittel nach den islamischen religiösen Ernährungsvorschriften hergestellt wurde, und daher „halal“ ist. Gesundheits- und Hygieneaspekte werden bei der Zertifizierung gesondert geprüft, können aber z. B. über das Verbot, gesundheitsschädliche Lebensmittel zu sich zu nehmen, einfließen."
+          },
+          {
+            "type": "paragraph",
+            "text": "Neben der Prozesszertifizierung, die unter anderem Befragungen, Prüfungen der Warenherkünfte und der Produktionsstätte und -abläufe umfasst, führen einige Zertifizierer Stichprobenprüfung auf Vorhandensein von Schweinefleisch mit Hilfe gentechnischer Prüfungen und chemische Analysen auf Alkohol durch."
+          },
+          {
+            "type": "paragraph",
+            "text": "Zertifizierungen werden teils aus werblichen Gründen vorgenommen, so bei Lebensmitteln wie Teigwaren, bei denen von vornherein kaum der Möglichkeit besteht, gegen die Vorschriften zu verstoßen. Welche Anforderungen für die Zertifizierung genau gestellt werden, unterscheidet sich im Detail, oft abhängig von der Koran-Auslegung der Autorität, auf die sich der Zertifizierer beruft. Dies bezieht sich nicht auf die grundlegenden Ernährungsvorschriften selbst, sondern auf deren konkrete Auslegung z. B. hinsichtlich der Gestaltung und Nutzung von Produktionsanlagen. So gibt es unterschiedliche Ansichten darüber, ob nach deutschen Tierschutzvorschriften vor dem Schlachten betäubte Tiere „halal“ sind oder nicht."
+          }
+        ]
+      ]
+    },
+    {
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Umsetzung einer HALAL Zertifizierung"
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Anforderungen"
+          },
+          {
+            "type": "list",
+            "icon": "angle",
+            "items": [
+              "Einsatz von Halal-konformen Rohstoffen in der Rezeptur.",
+              "Die Halal-Konformität muss nachweisbar sein.",
+              "Es darf keine Vermischung zwischen Halal-konformen Rohstoffen und nichtkonformen Rohstoffen stattfinden.",
+              "Es darf keine Vermischung zwischen Halal-konformen Halbfertigwaren und nichtkonformen Halbfertigwaren stattfinden.",
+              "Es darf keine Kreuzkontamination im Rohstofflager stattfinden.",
+              "Es darf keine Kreuzkontamination während der Produktion bzw. auf den Produktionsanlagen stattfinden.",
+              "Es darf keine Vermischung von Fertigprodukten stattfinden.",
+              "Reinigungsmittel und sonstige Hilfsstoffe dürfen den Halal-Status\nnicht gefährden.",
+              "Die Rückverfolgbarkeit der Produkte muss gewährleistet sein."
+            ]
+          }
+        ],
+        [
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Prozessmerkmale"
+          },
+          {
+            "type": "list",
+            "icon": "angle",
+            "items": [
+              "Eindeutige Rezeptur auf Basis von Rohstoffen entwickeln, die in Halal-Qualität verfügbar sind.",
+              "Spezifikationen müssen eindeutig eine Halal-Konformität nachweisen.",
+              "Eindeutige Kennzeichnung der Rohstoffe (Farbcode, farbige Etiketten, Clips etc.).",
+              "Übliche Maßnahmen zur Vermeidung von Kreuzkontamination.",
+              "Produktion in Tageschargen mit Komplettreinigung zwischendurch.",
+              "Spezifikationen und Rezepturen vom Halal-Zertifizierer genehmigen lassen.",
+              "Rohstoffe müssen adäquat verpackt sein.",
+              "Spezifische Halal-Schulung der Mitarbeiter.",
+              "Analyse hinsichtlich Kreuzkontamination (PCR) durchführen."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "id": "religion",
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Halal nicht nur um Nahrungsmittel"
+          },
+          {
+            "type": "paragraph",
+            "text": "„Halal“ als ein Begriff für"
+          },
+          {
+            "type": "list",
+            "icon": "angle",
+            "items": [
+              "verbesserte Lebensbedingungen für Mensch und Tier",
+              "sichere, saubere und gesunde Nahrungs- und Konsumgüter",
+              "nachhaltiges und verantwortungsvolles Wirtschaften",
+              "respektvollen und fairen Umgang mit allen Teilnehmern\nder Supply-Chain-Management (SCM) bzw. Lieferkettenmanagement,"
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Relevante Halal-Kriterien / Informationen"
+          },
+          {
+            "type": "paragraph",
+            "text": "Im Wesentlichen ist das Konzept von Halal viel umfassender und nicht nur beschränkt auf die Schächtung von Tieren nach islamischen Richtlinien. Zum Beispiel verpflichtet das Halal-Konzept, dass die Quellen Sauberkeit der Rohstoffe und Arbeitsplätze, Hygiene und Sicherheit der Mitarbeiter und Umwelt im Produktionsprozess von Anfang an bis zur Fertigung des Produkts beachtet werden. Das Halal-Konzept ist somit nicht nur ein Standardwert für Nahrungsmittel. Das Folgende definiert Halal näher im Produktionsprozess:"
+          },
+          {
+            "type": "list",
+            "icon": "angle",
+            "items": [
+              "Richtige und moralische Handelsethik",
+              "Sauberkeit des Arbeitsplatzes und der Betriebseinrichtung",
+              "Fairer Umgang mit Mitarbeitern",
+              "Erhalt von Natur und Umwelt",
+              "Nachhaltige Entwicklung"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Darüber hinaus gilt, dass die Produkte frei von folgenden Inhalten sind:"
+          },
+          {
+            "type": "list",
+            "icon": "angle",
+            "items": [
+              "jeglichen menschlichen Körperteilen oder Zutaten tierischen Ursprungs, die den Muslimen verboten sind; oder verboten zu benutzen sind, weil sie von Tieren, die nicht nach islamischen Richtlinien geschlachtet wurden, stammen",
+              "Stoffen oder gentechnisch veränderten Organismen (GMO),\ndie gemäß der islamischen Richtlinien als Najas (unrein) eingestuft wurden",
+              "aliphatischen Alkoholen",
+              "bestrahlten Rohstoffen",
+              "Zutaten, die dem Konsumenten\noder dem Endverbraucher schaden könnten"
+            ]
+          }
+        ],
+        [
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Darüber hinaus darf keine Querkontamination während des Produktionsprozesses und Logistik auftreten. Falls der Produktions-ablauf in Verbindung mit nicht-Halalprodukten kommt, muss eine gründliche Reinigung durchgeführt werden, (der Prozess muss die vollständige Entfernung der Restrückstände, Gerüche und/oder Farbe garantieren, um die unreinen Stoffe zu entfernen, gefolgt von einer Schlussspülung mit Wasser) bevor die Halal-Produktion startet. Dies bezieht sich auf sämtliche zusammenhängende Maschinen, Geräte, Utensilien, Oberflächen und Kleidung, die alle frei von nicht-halalen Bestandteile sein sollen, bevor die Halal-Produkte angefasst, aufbereitet, hergestellt und verpackt werden. Strenge Verfahren müssen vorhanden sein, damit Verwechslungen bei Verpackungen oder ähnliche Fehler nicht auftreten."
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Halal nicht nur für Muslime"
+          },
+          {
+            "type": "paragraph",
+            "text": "Aus gesundheitlicher Sicht scheint Halal ein von der Religion angetriebenes Konzept, denn es ist ein Grundprinzip, das in der Religion zu finden ist. Jedoch ist der Umfang der möglichen Einsatzbereiche und Geschäftsmöglichkeiten des Halal-Konzepts so weitreichend, dass nicht nur Mitglieder islamischen Glaubens involviert sind. Das Halal-Konzept ist somit durchaus in der Lage Andere, unabhängig von Herkunft und Religion einzubeziehen, solange die Halal-Anforderungen im Produktionsprozess und in den Dienstleistungen erfüllt werden. Das Halal-Konzept schließt keineswegs nicht-Muslime vom Genuss der ethischen und qualitativ hochwertigen produzierten Halal-Waren aus. Betrachtet man das Halal Ethno-System, so ist es nicht verwunderlich, dass es bereits heute Kunden gibt, welche sich nicht zum Islam bekennen, trotzdem aber Halal-zertifizierte Lebensmittel kaufen."
+          }
+        ]
+      ]
+    },
+    {
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Halal Seminare / Schulungen"
+          },
+          {
+            "type": "paragraph",
+            "text": "Um Interessenten und Unternehmer, die in der Halal-Industrie aktiv sind und sein möchten, auszubilden und zugleich das Bewusstsein über die weltweite Wettbewerbsfähigkeit der Halal-Industrie zu schaffen, möchte WHU Ihnen das Halal-Trainingsprogramm anbieten. Dieses Programm wird das Verständnis vom Vertrauen im Halal-Markt weiter stärken, den globalen Reiz durch die Aufklärung über die einzigartigen Eigenschaften von Halal-Produkten ausweiten und auf jeden Fall wird das Wissen innerhalb der Organisation erhöht. Wir glauben, dass dieses Trainingsprogramm Sie in Bezug auf die Anerkennung, Vermarktung und Schaffung von Spornkraft profitieren lassen wird."
+          },
+          {
+            "type": "paragraph",
+            "text": "Wir glauben auch, dass durch solch eine Zusammenarbeit eine Echtzeit-Anwendung von Halal lokal als auch international dies als ein bevorzugter globaler Standard für die Menschheit dargestellt wird, wenn man bedenkt, dass die Nachfrage nach Halal-Lebensmitteln sich nicht nur auf die Nahrungsmittelhersteller und dem Konsumgüter Service beschränkt, sondern zur gleichen Zeit auch Non-Food-Hersteller und dabei nicht auf Bildung, Gastronomie, Pharma-und Einzelhandel beschränkt ist."
+          }
+        ],
+        []
+      ]
+    }
+  ]
+}

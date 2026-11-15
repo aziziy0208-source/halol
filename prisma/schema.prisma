@@ -1,0 +1,284 @@
+// WHU Halal Zertifizierung — database schema.
+// Conventions: ids are cuid strings; all timestamps are UTC; calendar dates
+// (issue/valid/audit) are @db.Date. EXPIRED is never stored — it is derived
+// from `validUntil < today` at read time.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Users & auth ───────────────────────────────────────────────────────────
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  ISSUER
+  VIEWER
+}
+
+model User {
+  id                 String    @id @default(cuid())
+  name               String
+  email              String    @unique // stored lower-cased
+  passwordHash       String // argon2id
+  role               Role      @default(VIEWER)
+  totpSecret         String? // encrypted at rest (AES-256-GCM), never plain
+  totpEnabledAt      DateTime?
+  totpLastUsedStep   Int? // last accepted 30 s time step: a code can't be replayed
+  isActive           Boolean   @default(true)
+  mustChangePassword Boolean   @default(false) // set for admin-issued temporary passwords
+  failedLoginCount   Int       @default(0)
+  lockedUntil        DateTime? // 5 failed logins → locked for 15 minutes
+  lastLoginAt        DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  sessions            Session[]
+  createdCertificates Certificate[] @relation("CertificateCreatedBy")
+  issuedCertificates  Certificate[] @relation("CertificateIssuedBy")
+  auditLogs           AuditLog[]
+}
+
+model Session {
+  id                String   @id // SHA-256 of the cookie token; the token itself is never stored
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  twoFactorVerified Boolean  @default(false)
+  pendingTotpSecret String? // encrypted; only while the user is setting up 2FA
+  expiresAt         DateTime
+  lastSeenAt        DateTime @default(now())
+  userAgent         String?
+  ipHash            String?
+  createdAt         DateTime @default(now())
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+// ─── Master data ────────────────────────────────────────────────────────────
+
+model Company {
+  id             String   @id @default(cuid())
+  name           String
+  legalForm      String?
+  address        String // street and house number
+  postalCode     String?
+  city           String?
+  country        String // ISO 3166-1 alpha-2, e.g. "DE"
+  registrationNo String?
+  contactPerson  String?
+  email          String?
+  phone          String?
+  /// Certificate holder's logo, printed on certificates (template v2). Private storage key.
+  logoImageKey   String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  certificates Certificate[]
+
+  @@index([name])
+}
+
+model Standard {
+  id        String   @id @default(cuid())
+  code      String   @unique // e.g. "OIC/SMIIC 1:2019"
+  title     String
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  certificates CertificateStandard[]
+}
+
+model Signatory {
+  id                String   @id @default(cuid())
+  name              String
+  title             String
+  signatureImageKey String? // private storage key, never a public URL
+  stampImageKey     String? // private storage key, never a public URL
+  isActive          Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  certificates Certificate[]
+}
+
+// ─── Certificates ───────────────────────────────────────────────────────────
+
+enum CertificateStatus {
+  DRAFT // editable, never public
+  PENDING_APPROVAL // ISSUER submitted, waiting for ADMIN (four-eyes); never public
+  ACTIVE
+  SUSPENDED
+  REVOKED
+  SUPERSEDED // replaced by a newer revision
+}
+
+model Certificate {
+  id                String            @id @default(cuid())
+  certificateNumber String? // assigned on issue (drafts have none)
+  revision          Int               @default(0)
+  publicToken       String?           @unique // assigned on issue; /v/{publicToken}
+  status            CertificateStatus @default(DRAFT)
+
+  companyId      String
+  company        Company @relation(fields: [companyId], references: [id], onDelete: Restrict)
+  productionSite String? // only if different from the company address
+  scope          String
+  category       String?
+
+  issueDate  DateTime? @db.Date
+  validUntil DateTime? @db.Date
+  auditDate  DateTime? @db.Date
+
+  signatoryId String?
+  signatory   Signatory? @relation(fields: [signatoryId], references: [id], onDelete: Restrict)
+
+  notes           String? // internal only, never shown publicly
+  templateVersion Int     @default(1)
+  isLegacy        Boolean @default(false) // imported from WHU's pre-system records
+
+  // Frozen render data written on issue (company, products, standards,
+  // signatory, dates). PDF and the public page use it, so later edits to
+  // master data never change an issued certificate.
+  snapshot Json?
+
+  pdfKey     String?
+  previewKey String? // PNG preview shown on the verification page
+  pdfSha256  String?
+
+  createdById String
+  createdBy   User      @relation("CertificateCreatedBy", fields: [createdById], references: [id], onDelete: Restrict)
+  submittedAt DateTime?
+  issuedAt    DateTime?
+  issuedById  String?
+  issuedBy    User?     @relation("CertificateIssuedBy", fields: [issuedById], references: [id], onDelete: Restrict)
+
+  suspendedAt   DateTime?
+  suspendReason String?
+  revokedAt     DateTime?
+  revokeReason  String?
+
+  supersededById String?      @unique
+  supersededBy   Certificate? @relation("Supersession", fields: [supersededById], references: [id], onDelete: Restrict)
+  supersedes     Certificate? @relation("Supersession")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  products  CertificateProduct[]
+  standards CertificateStandard[]
+  scanLogs  ScanLog[]
+
+  @@unique([certificateNumber, revision])
+  @@index([companyId])
+  @@index([status])
+  @@index([validUntil])
+}
+
+model CertificateProduct {
+  id            String      @id @default(cuid())
+  certificateId String
+  certificate   Certificate @relation(fields: [certificateId], references: [id], onDelete: Cascade)
+  name          String
+  brand         String?
+  articleNo     String?
+  description   String?
+  sortOrder     Int         @default(0)
+
+  @@index([certificateId, sortOrder])
+}
+
+model CertificateStandard {
+  certificateId String
+  certificate   Certificate @relation(fields: [certificateId], references: [id], onDelete: Cascade)
+  standardId    String
+  standard      Standard    @relation(fields: [standardId], references: [id], onDelete: Restrict)
+
+  @@id([certificateId, standardId])
+}
+
+/// Per-year sequence for certificate numbers. Incremented atomically
+/// (INSERT … ON CONFLICT DO UPDATE … RETURNING) so numbers are never duplicated.
+model Counter {
+  year       Int @id
+  lastNumber Int @default(0)
+}
+
+// ─── Logs ───────────────────────────────────────────────────────────────────
+
+/// Append-only. A database trigger rejects UPDATE and DELETE (see migration).
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String? // null for system actions (seed, import, cron)
+  user       User?    @relation(fields: [userId], references: [id], onDelete: Restrict)
+  action     String // e.g. "certificate.issue", "certificate.revoke", "user.login"
+  entityType String
+  entityId   String
+  before     Json?
+  after      Json?
+  ipHash     String?
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, entityId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+enum ScanChannel {
+  QR // opened /v/{token}
+  MANUAL // looked up by number on "Zertifikat prüfen"
+}
+
+/// No full IP addresses (DSGVO): only a keyed hash and an approximate country.
+model ScanLog {
+  id            String      @id @default(cuid())
+  certificateId String
+  certificate   Certificate @relation(fields: [certificateId], references: [id], onDelete: Cascade)
+  channel       ScanChannel @default(QR)
+  scannedAt     DateTime    @default(now())
+  country       String? // ISO 3166-1 alpha-2, approximate
+  userAgent     String?
+  ipHash        String?
+
+  @@index([certificateId, scannedAt])
+  @@index([scannedAt])
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  isRead    Boolean  @default(false)
+  ipHash    String?
+  createdAt DateTime @default(now())
+
+  @@index([isRead, createdAt])
+}
+
+// ─── Infrastructure ─────────────────────────────────────────────────────────
+
+/// Fixed-window rate limit counters (login, contact form, /v/, manual check).
+/// Kept in Postgres so limits survive restarts on the single-VPS setup.
+model RateLimitBucket {
+  key     String   @id // e.g. "verify:<ipHash>"
+  count   Int      @default(0)
+  resetAt DateTime
+
+  @@index([resetAt])
+}
+
+/// Admin-editable settings, e.g. "certificate.numberFormat",
+/// "certificate.defaultValidityMonths", "certificate.fourEyes".
+model Setting {
+  key         String   @id
+  value       Json
+  updatedAt   DateTime @updatedAt
+  updatedById String?
+}

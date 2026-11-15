@@ -1,0 +1,79 @@
+{
+  "id": "weblinks",
+  "parallax": {
+    "image": "p-4",
+    "text": "Web Links & Info"
+  },
+  "title": "Weblinks / Informationen",
+  "subtitle": [
+    "Auf den Homepages der nachgenannten Organisationen finden Sie weitere interessante Informationen zu den Themen Halal Zertifizierungen. Weiter finden Sie Links zu unseren Halal-Standards / Halal-Food-Standards und Standards Geber wie auch zu befreundeten Websites."
+  ],
+  "message": "* Weitere Informationen erhalten Sie durch einen Klick auf das jeweilige Logo *.",
+  "groups": [
+    {
+      "heading": "Mitgliedschaften:",
+      "items": [
+        {
+          "href": "https://www.ihialliance.org",
+          "label": "IHI",
+          "image": "/assets/links/ihi-alliance.png"
+        },
+        {
+          "href": "https://www.halalrc.org",
+          "label": "Halal Research Council",
+          "image": "/assets/links/halal-research-council.png"
+        },
+        {
+          "href": "https://www.din.de/de/",
+          "label": "DIN",
+          "image": "/assets/links/din.png"
+        }
+      ]
+    },
+    {
+      "heading": "Standardgeber:",
+      "items": [
+        {
+          "href": "https://www.smiic.org",
+          "label": "www.smiic.org",
+          "image": "/assets/links/smiic.jpg"
+        },
+        {
+          "href": "https://www.oic-oci.org",
+          "label": "www.oic-oci.org",
+          "image": "/assets/links/oic.jpg"
+        },
+        {
+          "href": "https://www.halal.gov.my",
+          "label": "www.halal.gov.my",
+          "image": "/assets/links/jakim.jpg"
+        },
+        {
+          "href": "https://www.mui.or.id",
+          "label": "www.mui.or.id",
+          "image": "/assets/links/mui.jpg"
+        },
+        {
+          "href": "https://www.hdcglobal.com",
+          "label": "www.hdcglobal.com",
+          "image": "/assets/links/hdc.jpg"
+        },
+        {
+          "href": "https://www.muis.gov.sg",
+          "label": "www.muis.gov.sg",
+          "image": "/assets/links/muis.jpg"
+        },
+        {
+          "href": "https://www.fiqhacademy.org.sa",
+          "label": "www.fiqhacademy.org.sa",
+          "image": "/assets/links/fiqh-academy.jpg"
+        },
+        {
+          "href": "https://www.esma.gov.ae",
+          "label": "www.esma.gov.ae",
+          "image": "/assets/links/esma.jpg"
+        }
+      ]
+    }
+  ]
+}

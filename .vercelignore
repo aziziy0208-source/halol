@@ -1,0 +1,12 @@
+# Never upload local data (database, private files incl. signatures) or secrets.
+.data
+.env*
+!.env.example
+backups
+backup.env
+# Build/test output
+.next
+node_modules
+test-results
+playwright-report
+tsconfig.tsbuildinfo

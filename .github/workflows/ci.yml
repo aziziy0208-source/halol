@@ -1,0 +1,75 @@
+# Checks every push and pull request: types, lint, dependency audit, the Playwright
+# e2e suite against the production build, and the Docker images.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    env:
+      NEXT_TELEMETRY_DISABLED: 1
+      # Each spec file creates its own database on this server (tests/e2e/environment.ts).
+      E2E_POSTGRES_URL: postgresql://postgres:postgres@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
+      - name: Browsers (tests + certificate renderer)
+        run: npx playwright install --with-deps chromium chromium-headless-shell
+      - name: E2E suite (builds first)
+        run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+
+  docker:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: App image
+        run: docker build --target runner -t whu-halal:ci .
+      - name: Migration image
+        run: docker build --target tools -t whu-halal-tools:ci .
+      - name: Backup image
+        run: docker build -t whu-halal-backup:ci docker/backup
+      - name: Compose file
+        run: |
+          cp .env.example .env
+          docker compose config --quiet
