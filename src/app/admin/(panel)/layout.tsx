@@ -32,6 +32,7 @@ const NAV: { href: string; key: keyof AdminMessages["nav"]; permission: Permissi
   { href: "/admin/approvals", key: "approvals", permission: "certificate.edit", icon: "approvals" },
   { href: "/admin/companies", key: "companies", permission: "company.view", icon: "companies" },
   { href: "/admin/messages", key: "messages", permission: "message.view", icon: "messages" },
+  { href: "/admin/inbox", key: "inbox", permission: "message.view", icon: "inbox" },
   { href: "/admin/import", key: "import", permission: "import.run", icon: "import" },
   { href: "/admin/audit", key: "audit", permission: "audit.view", icon: "audit" },
   { href: "/admin/users", key: "users", permission: "user.manage", icon: "users" },
@@ -48,12 +49,14 @@ async function PanelChrome({ children }: { children: ReactNode }) {
   const pending = visible.some((n) => n.key === "approvals")
     ? await prisma.certificate.count({ where: { status: "PENDING_APPROVAL" } })
     : 0;
+  // Badge on "Mailbox": unread received e-mails.
+  const unreadMail = visible.some((n) => n.key === "inbox") ? await prisma.inboundEmail.count({ where: { isRead: false } }) : 0;
   // Until the temporary password is replaced, only "My account" is offered.
   const items: NavEntry[] = visible.map((n) => ({
     href: n.href,
     label: t.nav[n.key] as string,
     icon: NavIcons[n.icon],
-    badge: n.key === "approvals" ? pending : undefined,
+    badge: n.key === "approvals" ? pending : n.key === "inbox" ? unreadMail : undefined,
   }));
   items.push({ href: "/admin/account", label: t.nav.account, icon: NavIcons.account });
 

@@ -103,6 +103,13 @@ bind to `127.0.0.1` only. The `backup` service writes a daily database dump and 
 storage bucket to `BACKUP_DIR`. Step-by-step server setup, updates, backup/restore and
 operations: **[docs/deploy.md](docs/deploy.md)**.
 
+**Languages:** the public site is German (`/`, `/impressum`, `/datenschutz`, `/zertifikat-pruefen`)
+and English (`/en`, `/en/imprint`, `/en/privacy`, `/en/verify-certificate`) — texts in
+`content/de` and `content/en`, UI strings and URL mapping in `src/i18n/site.ts`.
+
+**Mailbox:** e-mails received at the domain (Resend Inbound) appear in the admin panel under
+*Mailbox* (`src/lib/inbox`, needs `RESEND_API_KEY`).
+
 **Vercel** (serverless, EU region Frankfurt, Neon Postgres + private Vercel Blob) is supported as
 an alternative: `vercel.json`, `npm run setup:vercel-env`, step by step in
 **[docs/deploy-vercel.md](docs/deploy-vercel.md)**.

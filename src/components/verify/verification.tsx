@@ -14,6 +14,7 @@ import type { ReactNode } from "react";
 import { FaIcon } from "@/components/icons";
 import { Footer } from "@/components/site/footer";
 import { content } from "@/content";
+import { localizeHref, sitePath } from "@/i18n/site";
 import { countryName, formatVerifyDate, formatVerifyDateTime, type VerifyLang, verifyTexts } from "@/i18n/verify";
 import type { PublicCertificate, PublicStatus } from "@/lib/verify/lookup";
 
@@ -40,7 +41,7 @@ export function VerifyFrame({ lang, switchHref, children }: { lang: VerifyLang; 
     <div lang={lang} className="flex flex-1 flex-col bg-[#f3f5f7]">
       <header className="bg-white shadow-[0_1px_0_#e7e7e7]">
         <div className="mx-auto flex w-full max-w-[720px] items-center justify-between gap-3 px-4 py-2">
-          <Link href="/" className="flex min-w-0 items-center gap-3">
+          <Link href={sitePath("home", lang)} className="flex min-w-0 items-center gap-3">
             <Image src="/assets/brand/whu-logo.png" alt="WHU – World Halal Union" width={123} height={72} priority className="h-11 w-auto" />
             <span className="truncate text-sm font-semibold text-[#1b1b1b]">{t.pageTitle}</span>
           </Link>
@@ -55,7 +56,7 @@ export function VerifyFrame({ lang, switchHref, children }: { lang: VerifyLang; 
         </div>
       </header>
       <main className="mx-auto w-full max-w-[720px] flex-1 space-y-4 px-4 py-5">{children}</main>
-      <Footer />
+      <Footer lang={lang} />
     </div>
   );
 }
@@ -104,7 +105,7 @@ function Contact({ lang }: { lang: VerifyLang }) {
         </a>
       </li>
       <li>
-        <Link href="/#contact" className={link}>
+        <Link href={localizeHref("/#contact", lang)} className={link}>
           {lang === "de" ? "Kontaktformular" : "Contact form"}
         </Link>
       </li>
@@ -275,7 +276,7 @@ export function VerificationNotFound({ lang, checkedAt }: { lang: VerifyLang; ch
       <Banner tone="NOT_FOUND" label={t.notFound.label} text={t.notFound.text} />
       <Warning lang={lang} title={t.notFound.title} text={t.notFound.warning} />
       <p className="text-center">
-        <Link href={`/zertifikat-pruefen?lang=${lang}`} className="text-brand-ink underline">
+        <Link href={lang === "en" ? sitePath("check", "en") : `/zertifikat-pruefen?lang=${lang}`} className="text-brand-ink underline">
           {t.manual.title}
         </Link>
       </p>

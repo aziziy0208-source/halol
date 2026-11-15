@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ParallaxImage } from "@/content/schema";
+import { type SiteLang, siteUi } from "@/i18n/site";
 import { RichText } from "./rich-text";
 
 /**
@@ -9,10 +10,10 @@ import { RichText } from "./rich-text";
  * On mobile the layer is absolute: iOS ignores fixed backgrounds, and lazy
  * loading keeps the photos out of the critical path.
  */
-export function Parallax({ image, text }: { image: ParallaxImage; text?: string }) {
+export function Parallax({ image, text, lang = "de" }: { image: ParallaxImage; text?: string; lang?: SiteLang }) {
   return (
     <section
-      aria-label={text ? undefined : "Bildband"}
+      aria-label={text ? undefined : siteUi(lang).imageBand}
       // Dark base colour: the white caption stays readable before the photo has loaded.
       className="relative h-[300px] overflow-hidden bg-[#3a3a3a] [clip-path:inset(0)] md:h-[524px]"
     >

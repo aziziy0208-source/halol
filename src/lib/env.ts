@@ -51,6 +51,12 @@ const serverEnvSchema = z.object({
   SMTP_PASSWORD: optional(z.string()),
   SMTP_FROM: optional(z.string()),
   CONTACT_TO_EMAIL: z.email().default("info@halal-zertifizierung.org"),
+
+  // Mailbox in the admin panel: received e-mails are copied from Resend Inbound.
+  // Needs a "Full access" API key (a sending-only key cannot read received mail).
+  RESEND_API_KEY: optional(z.string()),
+  // Vercel Cron sends "Authorization: Bearer <CRON_SECRET>" (daily mailbox sync).
+  CRON_SECRET: optional(z.string().min(32)),
 });
 
 export type ServerEnv = z.infer<typeof serverEnvSchema>;

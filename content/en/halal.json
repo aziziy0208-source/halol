@@ -1,0 +1,232 @@
+{
+  "id": "halal",
+  "parallax": {
+    "image": "p-1",
+    "text": "“Halal” {{(ḥalāl, Arabic حلال)}} – or in Turkish {{“Helal”}}."
+  },
+  "title": "Halal",
+  "subtitle": [
+    "What is Halal?"
+  ],
+  "message": "“Halal” {{(halāl, Arabic حلال)}} – or in Turkish {{“Helal”}}.",
+  "cards": [
+    {
+      "icon": "check",
+      "color": "green",
+      "title": "Halal{{حلال}}",
+      "text": "is an Arabic word and can be translated as “permitted” and “permissible”."
+    },
+    {
+      "icon": "warning",
+      "color": "yellow",
+      "title": "makruh {{(undesirable)}}",
+      "text": "These things are not explicitly forbidden, but tend towards haram."
+    },
+    {
+      "icon": "remove",
+      "color": "red",
+      "title": "haram {{(حرام)}}",
+      "text": "forbidden"
+    }
+  ],
+  "rows": [
+    {
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Halal"
+          },
+          {
+            "type": "heading",
+            "level": 6,
+            "text": "What is Halal? Definition of Halal"
+          },
+          {
+            "type": "paragraph",
+            "text": "“Halal” (halāl, Arabic حلال) – or in Turkish “Helal”. Halal (Arabic ‏حلال‎, halāl) is an Arabic word and can be translated as “permitted” and “permissible”. The meaning of Halal is “that which is permissible, allowed and permitted”. Halal thus encompasses all things and actions that are permitted, permissible and in conformity with Islam from an Islamic point of view. It denotes all things and actions that are allowed or permissible under Islamic law. As the third of the five categories of human actions in Islamic jurisprudence, it stands between haram (‏حرام‎), forbidden actions, and fard (‏فرض‎), obligatory actions. Between halal and haram there is a grey area known as makruh (‏مكروه‎). Makruh (frowned upon/undesirable) denotes all things that are not explicitly forbidden but tend towards haram. Muslims should also avoid this grey area as a precaution."
+          },
+          {
+            "type": "paragraph",
+            "text": "Similar to organic labels or the Jewish kosher labels for food, so-called Halal certificates are found in the trade. Their purpose is to label products whose manufacture is ensured to comply with the Halal rules."
+          },
+          {
+            "type": "paragraph",
+            "text": "“Halal – Helal” stands for “permitted”, “permissible” or “pure”. All things and deeds that are allowed or permissible under Islamic law are referred to as Halal. In contrast to this stands"
+          },
+          {
+            "type": "paragraph",
+            "text": "Haram (forbidden, impure). The borderline area between Halal and Haram is described as"
+          },
+          {
+            "type": "paragraph",
+            "text": "Makruh (undesirable). Foods or other aspects that fall into this category are not explicitly forbidden, but tend towards Haram. Muslims should therefore avoid them completely. However, the question of Halal covers not only food, but also food additives and packaging materials, right through to the transport of the products. Halal therefore becomes a concept that strives to improve living standards and harmony between people and nature."
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Religious background"
+          },
+          {
+            "type": "paragraph",
+            "text": "Allah (the Glorified and Exalted) makes known in the Quran what has been forbidden: the dietary laws are set out in the Quran and the Sunnah. In principle, all foods are permitted except those that have been expressly or unambiguously forbidden. A Muslim is forbidden to eat pork and its by-products, and to consume intoxicating drinks (alcohol) and blood. Only animals that are permissible for consumption, have been slaughtered in accordance with the rules and had not already died may be eaten. An animal that has not been slaughtered is permitted if it was killed by hunting animals specially trained for this purpose, but not by wild predators of unknown origin and health. Animals sacrificed by other religions are also forbidden."
+          },
+          {
+            "type": "heading",
+            "level": 6,
+            "text": "In the Quran, Surah 5, verse 3 states:"
+          },
+          {
+            "type": "paragraph",
+            "text": "Forbidden to you are dead animals, blood, the flesh of swine, and that over which a name other than Allah's has been invoked; the animal killed by strangling; the animal beaten to death; the animal killed by a fall or by being gored; and that which has been eaten by predators, except what you have slaughtered; and that which has been slaughtered on an altar (as an offering to idols). (..) But whoever is compelled by famine, with no inclination to sin – then indeed, Allah is All-Forgiving, Merciful.”"
+          },
+          {
+            "type": "paragraph",
+            "text": "As can be seen from the verse, Islam requires Muslims to observe certain rules on eating, drinking and slaughter."
+          },
+          {
+            "type": "paragraph",
+            "text": "The following is narrated from the Prophet Muhammad (peace be upon him):"
+          },
+          {
+            "type": "paragraph",
+            "text": "“The lawful is clear and the unlawful is clear, and between the two there are doubtful matters of which many people have no knowledge. Whoever keeps away from them has thereby absolved himself (of blame). And whoever falls into this area has fallen into Haram.”"
+          },
+          {
+            "type": "paragraph",
+            "text": "Traditional slaughter without stunning, known as ritual slaughter, is practised in most countries and preferred by most Muslims. Although stunning is compatible with Islamic law (fiqh), as Muslim scholars have confirmed, it is not accepted by most Muslims, as they fear that the animals may not survive the stunning."
+          },
+          {
+            "type": "paragraph",
+            "text": "Some traditions refer to Surah 5, verse 5, and say that what has been slaughtered by Christians or Jews is also permitted: This day all good things have been made lawful for you. And the food of those who were given the Scripture is lawful for you, and your food is lawful for them. (..)"
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "What is “Halal”, what is “Haram”?"
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "What is “Haram”?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Harām (Arabic ‏ حرام‎, harām) is an Arabic adjective which, in Islam, denotes everything that is “forbidden, inviolable, sacred” according to the Sharia. In its ambiguity, it corresponds most closely to the concept of taboo in English."
+          },
+          {
+            "type": "paragraph",
+            "text": "The opposite of harām is halāl (‏حلال‎), which denotes what is permitted under the Sharia. The adjective harām is to be distinguished from the Arabic noun Haram, which denotes a sacred precinct."
+          },
+          {
+            "type": "paragraph",
+            "text": "As a term for “that which is forbidden”, harām already occurs in the Quran. In Surah 16:116, for example, people are called upon not to claim with lying tongues that one thing is permitted (halāl) and another forbidden (harām). According to Islamic understanding, a Muslim commits a sin by carrying out an act classified as harām by the Quran or by Islamic jurisprudence. In this sense, harām is to be distinguished from the adjective mamnu' ‏ممنوع ‎/ mamnūʿ, which denotes what is forbidden under secular law."
+          },
+          {
+            "type": "paragraph",
+            "text": "Harām is the last of the five categories of human actions in Islamic jurisprudence."
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "What is “Makruh”?"
+          },
+          {
+            "type": "paragraph",
+            "text": "In Islam, makruh (Arabic ‏مكروه‎, makrūh) refers to actions that are disliked according to religious understanding and should therefore be avoided. According to Islamic tradition, a Muslim is not punished for performing disliked actions, but is rewarded for refraining from them."
+          },
+          {
+            "type": "paragraph",
+            "text": "It is the fourth of the five categories of human actions in Islamic jurisprudence."
+          },
+          {
+            "type": "paragraph",
+            "text": "Disliked acts include, for example, wasting water (e.g. during ritual ablutions) and disregarding recommended or preferred acts – both during and outside acts of worship."
+          },
+          {
+            "type": "paragraph",
+            "text": "In general, any excessive action is regarded as disliked."
+          },
+          {
+            "type": "paragraph",
+            "text": "According to some scholars, smoking is at least makruh, while others even classify it as haram."
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "What is “Fard”?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Fard (Arabic ‏فرض ‎, fard “duty”), also Arabic ‏فريضة ‎, farīda, means “religious duty”, “(divine) ordinance”, “ordinance”. Fard is the sum of those religious obligations that Muslims must fulfil unconditionally in their ritual life. The corresponding verb is farada or iftarada and accordingly occurs in both the Quran and the Hadith with the meaning “to impose something on someone as a (religious) duty”, “to ordain”, “to declare binding”."
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "What is “Sunnah”?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Sunnah (Arabic‏سنة ‎ ‘custom, habitual practice, transmitted norm’), pl. sunan (‏سنن‎), is a term which in pre-Islamic times denoted the customs, practices, values and norms of the various Arab tribes, but which acquired a religious meaning in the course of the formation of Islam by becoming the short term for the sunnat an-nabī to be followed, the “practice of the Prophet (Hz. Muhammad)”."
+          },
+          {
+            "type": "paragraph",
+            "text": "In this sense, Sunnah is used in particular in Islamic jurisprudence and the science of tradition. Over time, various shifts in the meaning of the term have occurred. The corresponding verb is ‏استنّ سنّ, sanna / istanna ‘to prescribe something, to introduce something’."
+          }
+        ]
+      ]
+    },
+    {
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "The following are forbidden:"
+          },
+          {
+            "type": "list",
+            "icon": "remove",
+            "items": [
+              "Foods obtained from plants are in principle “halal”, with the exception of intoxicating and toxic products. “Haram” covers all things that Muslims are not permitted to consume."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "With regard to diet, the following main categories are considered “haram” (forbidden):"
+          },
+          {
+            "type": "list",
+            "icon": "remove",
+            "items": [
+              "Pigs, dogs, snakes, monkeys, carnivorous animals, e.g. lions, tigers, bears, birds of prey, e.g. eagles, vultures, rats, scorpions, animals not slaughtered according to halal rules, reptiles, amphibians, insects, carrion, blood, intoxicants, alcohol and alcoholic beverages.",
+              "“Pig” includes all foods and ingredients that may contain pig components or are derived from them, e.g. gelatine. Pork is forbidden because the pig, as an omnivore, also eats waste and faeces. According to the Quran, people should eat only what is “good”."
+            ]
+          }
+        ],
+        [
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "list",
+            "icon": "remove",
+            "items": [
+              "The meat of birds of prey, of land animals without ears, e.g. snakes, and of wild boar is also “haram”. Horse meat and donkey meat are likewise forbidden, as these animals are intended for carrying loads. Only the meat of slaughtered animals may be consumed, i.e. the meat must not come from animals that have died of themselves. The consumption of animals sacrificed by other religions is also forbidden. The consumption of fish is expressly permitted. In addition to forbidden foods of animal origin, “haram” also includes intoxicating and toxic products of plant origin as well as alcohol and alcoholic beverages.",
+              "In addition to forbidden foods of animal origin, “haram” also includes intoxicating and toxic products of plant origin as well as alcohol and alcoholic beverages."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The classification into “haram” and “halal” is not always that simple. The many processes involved in the manufacture and preparation of food can lead to contamination that renders permitted food “haram”. Food can be contaminated by forbidden additives such as gelatine from pig components, emulsifiers, flavourings or colourings, or be transported or stored together without adequate packaging."
+          }
+        ]
+      ]
+    }
+  ]
+}

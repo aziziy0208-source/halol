@@ -266,6 +266,32 @@ model ContactMessage {
 
 /// Fixed-window rate limit counters (login, contact form, /v/, manual check).
 /// Kept in Postgres so limits survive restarts on the single-VPS setup.
+/// E-mails received at the domain (info@…), copied from the mail provider (Resend Inbound)
+/// so the admin panel keeps them after the provider's retention period.
+model InboundEmail {
+  id          String   @id @default(cuid())
+  providerId  String   @unique // Resend received-email id
+  messageId   String?
+  fromAddress String
+  fromName    String?
+  to          String[]
+  cc          String[]
+  replyTo     String[]
+  subject     String
+  text        String?
+  html        String? // untrusted: shown only in a sandboxed iframe without scripts or remote content
+  attachments Json // [{ id, filename, contentType, size, storageKey | null }]
+  spf         String?
+  dkim        String?
+  dmarc       String?
+  isRead      Boolean  @default(false)
+  receivedAt  DateTime
+  createdAt   DateTime @default(now())
+
+  @@index([receivedAt])
+  @@index([isRead, receivedAt])
+}
+
 model RateLimitBucket {
   key     String   @id // e.g. "verify:<ipHash>"
   count   Int      @default(0)

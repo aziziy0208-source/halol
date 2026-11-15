@@ -1,0 +1,25 @@
+{
+  "datenschutz": {
+    "title": "Privacy policy",
+    "subtitle": [
+      "Data protection statement"
+    ],
+    "message": "The privacy policy is currently being updated.",
+    "paragraphs": [
+      "If you have any questions about data protection, please contact info@halal-zertifizierung.org."
+    ],
+    "placeholder": true
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": [
+      "Page not found"
+    ],
+    "message": "The requested page does not exist.",
+    "paragraphs": [],
+    "link": {
+      "label": "Back to the homepage",
+      "href": "/"
+    }
+  }
+}

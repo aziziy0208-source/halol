@@ -1,0 +1,38 @@
+{
+  "id": "contact",
+  "parallax": {
+    "image": "p-3",
+    "text": "Contact"
+  },
+  "title": "Contact",
+  "subtitle": [
+    "for further information"
+  ],
+  "message": "We will be pleased to send you {{further information}} about our services.",
+  "form": {
+    "heading": "Email form",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send!"
+  },
+  "office": {
+    "heading": "WHU – WELT HALAL UNION Zertifizierungsstelle",
+    "subheading": "WHU – World Halal Union Certification Body",
+    "addressHeading": "Address",
+    "person": "Günhan Kaplan",
+    "role": [
+      "Leiter der Zertifizierungsstelle",
+      "Head of Certification Body"
+    ],
+    "phones": [
+      "Phone (work): +49 17 42 495 885",
+      "Phone (work): +49 17 94 239 803"
+    ],
+    "address": [
+      "Brudermühlstr. 12",
+      "D-81371 München"
+    ],
+    "email": "info@halal-zertifizierung.org"
+  }
+}

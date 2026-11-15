@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import type { SliderSlide } from "@/content/schema";
+import { type SiteLang, siteUi } from "@/i18n/site";
 import { FaIcon, ICONS } from "@/components/icons";
 
 const INTERVAL_MS = 9000; // original Revolution Slider delay
@@ -12,7 +13,8 @@ const INTERVAL_MS = 9000; // original Revolution Slider delay
  * left, logos on the right, captions fly in one after another.
  * All slides share one grid cell, so the banner is as tall as the tallest slide.
  */
-export function Slider({ slides }: { slides: SliderSlide[] }) {
+export function Slider({ slides, lang = "de" }: { slides: SliderSlide[]; lang?: SiteLang }) {
+  const t = siteUi(lang);
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -31,8 +33,8 @@ export function Slider({ slides }: { slides: SliderSlide[] }) {
   return (
     <div
       role="region"
-      aria-roledescription="Karussell"
-      aria-label="Standards und Mitgliedschaften"
+      aria-roledescription={t.carousel}
+      aria-label={t.sliderLabel}
       className="relative mb-9 overflow-hidden bg-panel"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -49,8 +51,8 @@ export function Slider({ slides }: { slides: SliderSlide[] }) {
             <div
               key={slide.title}
               role="group"
-              aria-roledescription="Folie"
-              aria-label={`${i + 1} von ${slides.length}`}
+              aria-roledescription={t.slide}
+              aria-label={t.slideOf(i + 1, slides.length)}
               aria-hidden={!isActive}
               inert={!isActive}
               className={`col-start-1 row-start-1 flex flex-col items-center gap-8 transition-opacity duration-500 lg:flex-row lg:items-center lg:justify-between ${
@@ -106,7 +108,7 @@ export function Slider({ slides }: { slides: SliderSlide[] }) {
       <button
         type="button"
         onClick={() => go(-1)}
-        aria-label="Vorherige Folie"
+        aria-label={t.previousSlide}
         className="absolute top-1/2 left-3 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/15 text-white hover:bg-black/35 md:left-5"
       >
         <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -116,7 +118,7 @@ export function Slider({ slides }: { slides: SliderSlide[] }) {
       <button
         type="button"
         onClick={() => go(1)}
-        aria-label="Nächste Folie"
+        aria-label={t.nextSlide}
         className="absolute top-1/2 right-3 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/15 text-white hover:bg-black/35 md:right-5"
       >
         <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden fill="none" stroke="currentColor" strokeWidth="2.5">

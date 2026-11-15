@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { content } from "@/content";
-import { Footer } from "@/components/site/footer";
 import { SimplePage } from "@/components/site/simple-page";
 
 export const metadata: Metadata = {
@@ -9,10 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function NotFound() {
-  return (
-    <>
-      <SimplePage page={content.pages.notFound} />
-      <Footer />
-    </>
-  );
+  return <SimplePage page={content.pages.notFound} />;
 }

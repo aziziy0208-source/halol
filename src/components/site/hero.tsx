@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { HeroSlide } from "@/content/schema";
+import { type SiteLang, siteUi } from "@/i18n/site";
 
 const INTERVAL_MS = 9000; // original Supersized slide_interval
 const PRELOAD_NEXT_MS = 3000; // load the next photo only after the first one is shown
 
 /** Full-screen cross-fading photo slideshow with a dark link box (original "Supersized" hero). */
-export function Hero({ slides }: { slides: HeroSlide[] }) {
+export function Hero({ slides, lang = "de" }: { slides: HeroSlide[]; lang?: SiteLang }) {
   const [active, setActive] = useState(0);
   const [preloaded, setPreloaded] = useState(false);
 
@@ -26,7 +27,7 @@ export function Hero({ slides }: { slides: HeroSlide[] }) {
   }, [slides.length]);
 
   return (
-    <section id="top" aria-label="Willkommen" className="relative h-svh min-h-[420px] overflow-hidden bg-[#3a3a3a]">
+    <section id="top" aria-label={siteUi(lang).welcome} className="relative h-svh min-h-[420px] overflow-hidden bg-[#3a3a3a]">
       {slides.map((slide, i) =>
         i === 0 || preloaded ? (
           <Image

@@ -84,6 +84,19 @@ so Vercel serves the whole zone (mail records then go into Vercel DNS too). Then
 redeploy. **Do this before issuing real certificates** — every QR code keeps the URL that was
 configured when it was issued.
 
+## E-mail (Resend)
+
+- Domain `halal-zertifizierung.org` is verified in Resend (region eu-west-1) for sending and
+  receiving; DNS records live in Vercel DNS (`resend._domainkey` TXT, `send`/`rsend` CNAME,
+  `_dmarc` TXT, MX `@` → `receive-euw1.forge.rmta.net`).
+- Contact form → SMTP: `SMTP_HOST=smtp.resend.com`, `SMTP_PORT=465`, `SMTP_SECURE=true`,
+  `SMTP_USER=resend`, `SMTP_PASSWORD` = a *Sending access* API key restricted to the domain.
+- Received mail (info@…) is read in Resend → Inboxes and copied into the admin panel
+  (**Mailbox**) when the page opens, plus once a day by Vercel Cron (`/api/cron/inbox-sync`,
+  `CRON_SECRET`). Needs `RESEND_API_KEY` = a *Full access* key (a sending key cannot read mail).
+  Attachments up to 10 MB are stored in Blob; HTML is shown in a sandbox without scripts or
+  remote images.
+
 ## Limits and notes
 
 - **Request size:** Vercel accepts at most 4.5 MB per request. Image uploads are limited to

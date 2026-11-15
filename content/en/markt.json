@@ -1,0 +1,73 @@
+{
+  "id": "halal-markt",
+  "title": "The Halal market",
+  "subtitle": [
+    "Facts and figures"
+  ],
+  "message": "Halal products currently account for {{20%}} of global food production.",
+  "stats": [
+    {
+      "icon": "globe",
+      "color": "lightblue",
+      "title": "{{Global}} data",
+      "paragraphs": [
+        "With a global customer base\nof 1.8 billion Muslims, Halal is today\none of the fastest-growing global markets.",
+        "At the same time, with annual growth of around 1.84%,\nMuslims are the fastest-growing population group.",
+        "It is also an emerging market force\nthat attracts non-Muslims with its healthy,\nhygienic and contamination-free\nprinciples of food production.",
+        "The volume of Halal products is estimated at around\nUSD 2.1–2.3 trillion.",
+        "Of this, approx. USD 675–700 billion\nis accounted for by the food sector."
+      ]
+    },
+    {
+      "icon": "signal",
+      "color": "green",
+      "title": "{{European}} data",
+      "paragraphs": [
+        "In Europe, the Halal market is estimated at EUR 70 billion.",
+        "In France alone, the sector is worth EUR 7.5 billion,\nexceeding even sales of organic products.",
+        "In Germany, the volume is around EUR 5 billion,\nwith a large share accounted for by meat and fish products."
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Business areas – industry sectors"
+          },
+          {
+            "type": "paragraph",
+            "text": "WHU has set itself the goal of meeting the individual needs of every client in the Halal certification process. In Halal certification, WHU focuses on food and cosmetics, and also offers consulting and training. Halal certification has many benefits which, in the production of food and cosmetics, lead to respectful interaction between people, animals and nature. Production is sustainable and economically responsible."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Halal certification for companies in the following business areas:"
+          },
+          {
+            "type": "list",
+            "icon": "dot",
+            "items": [
+              "Food industry",
+              "Chemicals",
+              "Pharmaceuticals and medicine",
+              "Cosmetics industry",
+              "Slaughterhouses",
+              "Healthcare, hospitals, rehabilitation",
+              "Trade and services",
+              "Consumer goods",
+              "Education, schools, kindergartens",
+              "Hotel and catering industry"
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}

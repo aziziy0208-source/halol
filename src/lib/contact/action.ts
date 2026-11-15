@@ -6,16 +6,15 @@ import { mailEnabled, sendContactNotification } from "@/lib/mail";
 import { clientIp, hashIp } from "@/lib/security/ip";
 import { consumeRateLimit } from "@/lib/security/rate-limit";
 import { type ContactField, type ContactFormState, contactSchema } from "./schema";
+import { contactTexts } from "./texts";
 
 const LIMIT = 5; // messages
 const WINDOW_SECONDS = 60 * 60; // per hour and IP
 
-const SUCCESS: ContactFormState = {
-  status: "success",
-  message: "Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns so bald wie möglich.",
-};
-
 export async function submitContact(_prev: ContactFormState, formData: FormData): Promise<ContactFormState> {
+  const lang = formData.get("lang") === "en" ? "en" : "de";
+  const t = contactTexts(lang);
+  const SUCCESS: ContactFormState = { status: "success", message: t.success };
   const raw = {
     name: String(formData.get("name") ?? ""),
     email: String(formData.get("email") ?? ""),
@@ -25,14 +24,14 @@ export async function submitContact(_prev: ContactFormState, formData: FormData)
   // Honeypot: real visitors never see or fill this field. Bots get a fake success.
   if (String(formData.get("website") ?? "") !== "") return SUCCESS;
 
-  const parsed = contactSchema.safeParse(raw);
+  const parsed = contactSchema(lang).safeParse(raw);
   if (!parsed.success) {
     const fieldErrors: Partial<Record<ContactField, string>> = {};
     for (const issue of parsed.error.issues) {
       const field = issue.path[0] as ContactField;
       fieldErrors[field] ??= issue.message;
     }
-    return { status: "error", message: "Bitte prüfen Sie Ihre Eingaben.", fieldErrors, values: raw };
+    return { status: "error", message: t.checkInput, fieldErrors, values: raw };
   }
 
   const ipHash = hashIp(clientIp(await headers()));
@@ -40,7 +39,7 @@ export async function submitContact(_prev: ContactFormState, formData: FormData)
   if (!limit.allowed) {
     return {
       status: "error",
-      message: "Sie haben zu viele Nachrichten gesendet. Bitte versuchen Sie es später erneut.",
+      message: t.tooMany,
       values: raw,
     };
   }

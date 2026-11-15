@@ -1,0 +1,104 @@
+{
+  "id": "about",
+  "title": "About us",
+  "subtitle": [
+    "World Halal Union",
+    "Welt Halal Union"
+  ],
+  "message": "{{WHU}} has set itself the goal of meeting the individual needs of every client in the Halal certification process. In Halal certification, {{WHU}} focuses on food and cosmetics, and also offers consulting and training. Halal certification has many benefits which, in the production of food and cosmetics, lead to respectful interaction between people, animals and nature. Production is sustainable and economically responsible.",
+  "rows": [
+    {
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Independent"
+          },
+          {
+            "type": "paragraph",
+            "text": "WHU is an independent and accredited inspection and certification body for Halal products. With a technical and scientific focus, our certification organisation specialises in independently inspecting and certifying products and production systems of the food industry in accordance with Islamic dietary laws and purity requirements (Halal guidelines). With our quality-based certification system, we offer consumers and companies alike secure and credible certification of Halal products according to high, recognised standards."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Corporate philosophy"
+          },
+          {
+            "type": "paragraph",
+            "text": "It is our corporate philosophy that Halal certification must assure consumers that products are safe and fit for consumption. For Muslims, our Halal certification provides a guarantee that the products have been manufactured in accordance with Islamic guidelines. For non-Muslims, Halal products are quality products simply by virtue of the concept of halal and healthy, as we strongly advise all applicants for Halal certification to meet the GMP and HACCP requirements. Consequently, products certified as Halal by WHU are safe for consumption or use, nutritious and of high quality."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "qualitaet",
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "HALAL standards"
+          },
+          {
+            "type": "paragraph",
+            "text": "The result of our cooperation with the OIC/SMIIC Halal standards guarantees that products and services certified by WHU receive lasting recognition and a high level of acceptance worldwide. Nevertheless, we continuously benchmark our inspections and certification process against other recognised standards in order to maintain our leading position. This includes continuously updating our methods and quality levels, which are based both on internationally recognised food safety standards and on the requirements laid down in the Halal guidelines."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "HALAL standards"
+          },
+          {
+            "type": "paragraph",
+            "text": "There is no single internationally recognised standard. Standards differ from country to country. We certify Halal according to the following standards:"
+          },
+          {
+            "type": "list",
+            "icon": "check",
+            "items": [
+              "OIC/SMIIC 1:2012 (DHB-TS OIC/SMIIC 1:2012)",
+              "HDC – Halal Development Council - Malaysia",
+              "DHC-Malaysia - Halal Industry Development Corporation",
+              "Malaysia (JAKIM)",
+              "Indonesia (MUI)",
+              "United Arab Emirates (UAE)",
+              "Singapore (MUIS)"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Our quality policy"
+          },
+          {
+            "type": "paragraph",
+            "text": "EVERY CLIENT IS UNIQUE Our principle and goal is the continuous development and improvement of the methods of service delivery that we offer our clients in the certification of Halal management systems. In step with today's rapidly changing organisational and technical conditions, our staff are trained to be highly qualified, independent and impartial in all areas. The training conveys the rules and principles required by international standards and guidelines such as ISO/IEC 17021, ISO 19011 and EA 2/17. Equipped with this knowledge, we offer a punctual, fast and reliable service to the benefit of every one of our clients. Our policy is based on client orientation, providing a fast service of a high quality standard."
+          }
+        ],
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Our primary objective"
+          },
+          {
+            "type": "paragraph",
+            "text": "Our primary objective is to conduct audits with our excellently trained staff and qualified pool of auditors, as well as persons with sector-specific experience in the relevant fields, that help clients to gain added value from the certification process itself. With this conviction, we aim to become the leading company in the sector. We are aware that we can only achieve this goal with the participation of all internal and external staff. We are constantly working to increase the qualifications of all staff and the effectiveness of our processes and of the pool of auditors and experts by aligning the procedures within our scope of activities with a system based on performance measurement. Our company is furthermore aware that every activity is part of continual improvement and undertakes, under the slogan “Every client is unique”, to apply the systems approach in management and the principles of truth and impartiality in decision-making."
+          }
+        ]
+      ]
+    }
+  ]
+}

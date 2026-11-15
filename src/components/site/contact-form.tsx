@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useActionState } from "react";
 import { submitContact } from "@/lib/contact/action";
+import { type SiteLang, sitePath, siteUi } from "@/i18n/site";
 import { CONTACT_INITIAL_STATE, type ContactField } from "@/lib/contact/schema";
 
 type Labels = { heading: string; name: string; email: string; message: string; submit: string };
@@ -10,7 +11,8 @@ type Labels = { heading: string; name: string; email: string; message: string; s
 const inputClass =
   "block border border-[#ccc] bg-white px-1 py-1.5 text-[#444] outline-none focus:border-[#aaa] focus:shadow-[0_0_3px_rgba(0,0,0,0.2)] aria-[invalid=true]:border-red-600";
 
-export function ContactForm({ labels }: { labels: Labels }) {
+export function ContactForm({ labels, lang = "de" }: { labels: Labels; lang?: SiteLang }) {
+  const t = siteUi(lang);
   const [state, formAction, pending] = useActionState(submitContact, CONTACT_INITIAL_STATE);
   const error = (field: ContactField) => state.fieldErrors?.[field];
 
@@ -84,11 +86,11 @@ export function ContactForm({ labels }: { labels: Labels }) {
         <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
+      <input type="hidden" name="lang" value={lang} />
       <p className="mt-3 text-xs leading-[18px] text-[#767676]">
-        Ihre Angaben verwenden wir ausschließlich zur Bearbeitung Ihrer Anfrage. Weitere Informationen
-        finden Sie in unserer{" "}
-        <Link href="/datenschutz" className="text-brand-ink underline">
-          Datenschutzerklärung
+        {t.privacyNote}{" "}
+        <Link href={sitePath("datenschutz", lang)} className="text-brand-ink underline">
+          {t.privacyLink}
         </Link>
         .
       </p>
@@ -98,7 +100,7 @@ export function ContactForm({ labels }: { labels: Labels }) {
         disabled={pending}
         className="float-right mt-2.5 min-h-8 rounded-[3px] bg-brand-ink px-3 py-1.5 text-[13px] text-white transition-colors duration-200 hover:bg-[#2b2b2b] disabled:opacity-60"
       >
-        {pending ? "Wird gesendet …" : labels.submit}
+        {pending ? t.sending : labels.submit}
       </button>
     </form>
   );

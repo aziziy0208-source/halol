@@ -3,6 +3,7 @@
 import type {} from "altcha/types/react";
 import Link from "next/link";
 import { useActionState, useEffect, useRef, useState } from "react";
+import { localizeHref } from "@/i18n/site";
 import { type VerifyLang, verifyTexts } from "@/i18n/verify";
 import { checkCertificateAction, type ManualCheckState } from "./actions";
 
@@ -81,7 +82,7 @@ export function ManualCheckForm({ lang }: { lang: VerifyLang }) {
           {state.notFound ? (
             <p className="mt-1 text-sm">
               {t.notFound.warning}{" "}
-              <Link href="/#contact" className="underline">
+              <Link href={localizeHref("/#contact", lang)} className="underline">
                 {lang === "de" ? "Kontakt" : "Contact"}
               </Link>
             </p>

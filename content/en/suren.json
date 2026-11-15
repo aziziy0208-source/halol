@@ -1,0 +1,76 @@
+{
+  "id": "suren",
+  "title": "Halal",
+  "subtitle": [
+    "Quran Surahs / Helal ile ilgili Ayetler:"
+  ],
+  "message": "“Halal” {{(halāl, Arabic حلال)}} – or in Turkish {{“Helal”}}.",
+  "verses": [
+    {
+      "arabicLabel": "Bakara Suresi / {{168. Ayet}}",
+      "arabic": "يَا أَيُّهَا النَّاسُ كُلُواْ مِمَّا فِي الأَرْضِ حَلاَلاً طَيِّباً وَلاَ تَتَّبِعُواْ خُطُوَاتِ الشَّيْطَانِ إِنَّهُ لَكُمْ عَدُوٌّ مُّبِينٌ",
+      "label": "The Cow / {{Verse 168.}}",
+      "text": "O mankind, eat of what is lawful and good on the earth, and do not follow the footsteps of Satan; indeed, he is to you a clear enemy."
+    },
+    {
+      "arabicLabel": "Bakara Suresi / {{172 - 173. Ayet}}",
+      "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُواْ كُلُواْ مِن طَيِّبَاتِ مَا رَزَقْنَاكُمْ وَاشْكُرُواْ لِلّهِ إِن كُنتُمْ إِيَّاهُ تَعْبُدُونَ",
+      "label": "The Cow / {{Verse 172.}}",
+      "text": "O you who believe, eat of the good things which We have provided for you, and be grateful to Allah if it is He whom you worship. 173. He has forbidden to you only dead animals, blood, the flesh of swine and that over which a name other than Allah's has been invoked. But whoever is driven by necessity – neither disobedient nor transgressing the limit – there is no sin upon him. Allah is All-Forgiving, Merciful."
+    },
+    {
+      "arabicLabel": "Maide Suresi / {{3. Ayet}}",
+      "arabic": "حُرِّمَتْ عَلَيْكُمُ الْمَيْتَةُ وَالْدَّمُ وَلَحْمُ الْخِنْزِيرِ وَمَا أُهِلَّ لِغَيْرِ اللّهِ بِهِ وَالْمُنْخَنِقَةُ وَالْمَوْقُوذَةُ وَالْمُتَرَدِّيَةُ وَالنَّطِيحَةُ وَمَا أَكَلَ السَّبُعُ إِلاَّ مَا ذَكَّيْتُمْ وَمَا ذُبِحَ عَلَى النُّصُبِ وَأَن تَسْتَقْسِمُواْ بِالأَزْلاَمِ ذَلِكُمْ فِسْقٌ الْيَوْمَ يَئِسَ الَّذِينَ كَفَرُواْ مِن دِينِكُمْ فَلاَ تَخْشَوْهُمْ وَاخْشَوْنِ الْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ وَأَتْمَمْتُ عَلَيْكُمْ نِعْمَتِي وَرَضِيتُ لَكُمُ الإِسْلاَمَ دِينًا فَمَنِ اضْطُرَّ فِي مَخْمَصَةٍ غَيْرَ مُتَجَانِفٍ لِّإِثْمٍ فَإِنَّ اللّهَ غَفُورٌ رَّحِيمٌ",
+      "label": "The Table Spread / {{Verse 3.}}",
+      "text": "Forbidden to you are dead animals, blood, the flesh of swine, and that over which a name other than Allah's has been invoked; the animal killed by strangling; the animal beaten to death; the animal killed by a fall or by being gored; and that which has been eaten by predators, except what you have slaughtered; and that which has been slaughtered on an altar (as an offering to idols); and that you seek to learn your fate by divining arrows. That is grave disobedience. This day those who disbelieve have despaired of your religion, so fear them not, but fear Me. This day I have perfected your religion for you, completed My favour upon you and chosen Islam for you as your religion. But whoever is driven by hunger, with no sinful intent – then Allah is All-Forgiving, Merciful."
+    },
+    {
+      "arabicLabel": "Maide Suresi / {{4. Ayet}}",
+      "arabic": "يَسْأَلُونَكَ مَاذَا أُحِلَّ لَهُمْ قُلْ أُحِلَّ لَكُمُ الطَّيِّبَاتُ وَمَا عَلَّمْتُم مِّنَ الْجَوَارِحِ مُكَلِّبِينَ تُعَلِّمُونَهُنَّ مِمَّا عَلَّمَكُمُ اللّهُ فَكُلُواْ مِمَّا أَمْسَكْنَ عَلَيْكُمْ وَاذْكُرُواْ اسْمَ اللّهِ عَلَيْهِ وَاتَّقُواْ اللّهَ إِنَّ اللّهَ سَرِيعُ الْحِسَابِ",
+      "label": "The Table Spread / {{Verse 4.}}",
+      "text": "They ask you what has been made lawful for them. Say: “All good things have been made lawful for you; and what you have taught your hunting animals and birds of prey (to catch for you), training them for the hunt and teaching them of what Allah has taught you. So eat of what they catch for you, and mention the name of Allah over it. And fear Allah; indeed, Allah is swift in reckoning.”"
+    },
+    {
+      "arabicLabel": "Maide / {{62. Ayet}}",
+      "arabic": "وَتَرَى كَثِيرًا مِّنْهُمْ يُسَارِعُونَ فِي الإِثْمِ وَالْعُدْوَانِ وَأَكْلِهِمُ السُّحْتَ لَبِئْسَ مَا كَانُواْ يَعْمَلُونَ",
+      "label": "The Table Spread / {{Verse 62.}}",
+      "text": "And you see many of them hastening into sin and transgression and the consumption of forbidden things. Evil indeed is what they do."
+    },
+    {
+      "arabicLabel": "Maide / {{82. Ayet}}",
+      "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُواْ لاَ تُحَرِّمُواْ طَيِّبَاتِ مَا أَحَلَّ اللّهُ لَكُمْ وَلاَ تَعْتَدُواْ إِنَّ اللّهَ لاَ يُحِبُّ الْمُعْتَدِينَ",
+      "label": "The Table Spread / {{Verse 87.}}",
+      "text": "O you who believe, do not declare unlawful the good things which Allah has made lawful for you, but do not transgress either. Indeed, Allah does not love the transgressors."
+    },
+    {
+      "arabicLabel": "Maide Suresi / {{88. Ayet}}",
+      "arabic": "وَكُلُواْ مِمَّا رَزَقَكُمُ اللّهُ حَلاَلاً طَيِّبًا وَاتَّقُواْ اللّهَ الَّذِيَ أَنتُم بِهِ مُؤْمِنُونَ",
+      "label": "The Table Spread / {{Verse 88.}}",
+      "text": "And eat of what Allah has provided for you, lawful and good. And fear Allah, in whom you believe."
+    },
+    {
+      "arabicLabel": "Enam Suresi / {{118. Ayet}}",
+      "arabic": "فَكُلُواْ مِمَّا ذُكِرَ اسْمُ اللّهِ عَلَيْهِ إِن كُنتُمْ بِآيَاتِهِ مُؤْمِنِينَ",
+      "label": "The Cattle / {{Verse 118.}}",
+      "text": "So eat of that over which the name of Allah has been mentioned, if you believe in His signs."
+    },
+    {
+      "arabicLabel": "Enfal Suresi / {{69. Ayet}}",
+      "arabic": "فَكُلُواْ مِمَّا غَنِمْتُمْ حَلاَلاً طَيِّبًا وَاتَّقُواْ اللّهَ إِنَّ اللّهَ غَفُورٌ رَّحِيمٌ",
+      "label": "The Spoils of War / {{Verse 69.}}",
+      "text": "8. The Spoils of War /69. So eat of what you have gained (in war), lawful and good, and fear Allah. Indeed, Allah is All-Forgiving, Merciful."
+    },
+    {
+      "arabicLabel": "Nahl Suresi / {{114. Ayet}}",
+      "arabic": "فَكُلُواْ مِمَّا رَزَقَكُمُ اللّهُ حَلالاً طَيِّبًا وَاشْكُرُواْ نِعْمَتَ اللّهِ إِن كُنتُمْ إِيَّاهُ تَعْبُدُونَ",
+      "label": "16. The Bee / {{Verse 114.}}",
+      "text": "So eat of the lawful and good things with which Allah has provided you, and be grateful for the favour of Allah, if it is He whom you serve."
+    },
+    {
+      "arabicLabel": "Mü'minun Suresi / {{51. Ayet}}",
+      "arabic": "يَا أَيُّهَا الرُّسُلُ كُلُوا مِنَ الطَّيِّبَاتِ وَاعْمَلُوا صَالِحًا إِنِّي بِمَا تَعْمَلُونَ عَلِيمٌ",
+      "label": "23. The Believers / {{Verse 51.}}",
+      "text": "O messengers, eat of the good things and do righteous deeds. Indeed, I am fully aware of what you do."
+    }
+  ]
+}

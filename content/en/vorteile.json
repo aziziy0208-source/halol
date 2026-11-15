@@ -1,0 +1,60 @@
+{
+  "id": "vorteile",
+  "title": "Benefits for companies",
+  "subtitle": [
+    "additional quality features"
+  ],
+  "message": "The high requirements of Halal certification make the products attractive to all consumers who attach importance to {{quality}} and control.",
+  "stats": [
+    {
+      "icon": "cog",
+      "color": "dark",
+      "title": "{{Global}} data",
+      "paragraphs": [
+        "With a global customer base\nof 1.8 billion Muslims, Halal is today\none of the fastest-growing global markets.",
+        "At the same time, with annual growth of around 1.84%,\nMuslims are the fastest-growing population group.",
+        "It is also an emerging market force\nthat attracts non-Muslims with its healthy,\nhygienic and contamination-free\nprinciples of food production.",
+        "The volume of Halal products is estimated at around\nUSD 2.1–2.3 trillion.",
+        "Of this, approx. USD 675–700 billion\nis accounted for by the food sector."
+      ]
+    },
+    {
+      "icon": "cogs",
+      "color": "dark",
+      "title": "{{European}} data",
+      "paragraphs": [
+        "In Europe, the Halal market is estimated at EUR 70 billion.",
+        "In France alone, the sector is worth EUR 7.5 billion,\nexceeding even sales of organic products.",
+        "In Germany, the volume is around EUR 5 billion,\nwith a large share accounted for by meat and fish products."
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "id": "tierschutz",
+      "divider": true,
+      "columns": [
+        [
+          {
+            "type": "heading",
+            "level": 3,
+            "text": "Halal and animal welfare, social responsibility"
+          },
+          {
+            "type": "paragraph",
+            "text": "In Islam, animal welfare is of very great importance. Meat and meat products, as well as products containing meat, inspected by WHU Germany come from animals that have been stunned and slaughtered in accordance with the European animal welfare slaughter regulation and have been fully bled. Halal certification also incorporates aspects such as organic production, Fair Trade, SA8000, animal welfare and corporate social responsibility. Since Muslims strive to act with “Ihsan”, i.e. to perform every action in the best possible way and thus to apply quality in all things, Halal certification must essentially cover the entire production process from the field to the finished product. Halal meat products are often produced by slaughter without stunning. In Germany, this is prohibited under §17 TierSchG (German Animal Welfare Act). Anyone who violates this regulation commits at least an administrative offence."
+          }
+        ],
+        [
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "paragraph",
+            "text": "This can only be avoided by applying for an exemption under §4 TierSchG upon presentation of a certificate of competence. An exemption may also be applied for on religious grounds. According to the case law of the Federal Constitutional Court (ritual slaughter ruling) of 23 November 2006, owing to the freedom of religion and belief guaranteed without restriction by Art. 4 of the Basic Law, and owing to the occupational freedom of an Islamic butcher, an exemption must be granted upon application, provided that the meat of the slaughtered animal is consumed by persons whose mandatory religious rules prohibit, without exception, the consumption of meat from animals that have not been ritually slaughtered. However, the ritual slaughter must be carried out by a competent person in an approved and registered slaughterhouse and be supervised by the competent veterinary office."
+          }
+        ]
+      ]
+    }
+  ]
+}

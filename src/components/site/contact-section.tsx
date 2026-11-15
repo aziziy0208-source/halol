@@ -2,6 +2,7 @@ import type { ContactSection as ContactSectionData } from "@/content/schema";
 import { FaIcon, ICONS } from "@/components/icons";
 import { ContactForm } from "./contact-form";
 import { Container, MessageBlock, TitleBar } from "./layout-primitives";
+import type { SiteLang } from "@/i18n/site";
 import { Parallax } from "./parallax";
 
 /** "+49 17 42 495 885" → "+49174249588" for tel: links (drops the "Tel (work):" label). */
@@ -9,11 +10,11 @@ function telHref(label: string): string {
   return `tel:${label.replace(/^.*?:/, "").replace(/[^\d+]/g, "")}`;
 }
 
-export function ContactSection({ section }: { section: ContactSectionData }) {
+export function ContactSection({ section, lang = "de" }: { section: ContactSectionData; lang?: SiteLang }) {
   const o = section.office;
   return (
     <>
-      {section.parallax ? <Parallax image={section.parallax.image} text={section.parallax.text} /> : null}
+      {section.parallax ? <Parallax image={section.parallax.image} text={section.parallax.text} lang={lang} /> : null}
       <section id={section.id} className="pt-6 pb-16">
         <Container>
           <TitleBar title={section.title} subtitle={section.subtitle} />
@@ -21,7 +22,7 @@ export function ContactSection({ section }: { section: ContactSectionData }) {
           <div className="grid gap-x-5 gap-y-8 md:grid-cols-2">
             <div>
               <h3 className="mb-[18px] text-xl">{section.form.heading}</h3>
-              <ContactForm labels={section.form} />
+              <ContactForm labels={section.form} lang={lang} />
             </div>
             <div>
               <h3 className="mb-[18px] text-xl">{o.heading}</h3>

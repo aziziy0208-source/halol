@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "title": "Halal Certificate / Certification - WHU / World Halal Union",
+    "description": "Here you will find information on Halal certification by WHU. Halal certificates are issued for food and cosmetics. Consulting and training are also offered.",
+    "keywords": ["Halal certificate", "Halal certification", "Training", "Consulting", "WHU"],
+    "siteName": "WHU – World Halal Union"
+  },
+  "nav": [
+    { "label": "Welcome", "href": "/#top" },
+    { "label": "About us", "href": "/#about" },
+    { "label": "Services", "href": "/#services" },
+    { "label": "halal?", "href": "/#halal" },
+    { "label": "Contact", "href": "/#contact" },
+    { "label": "Verify certificate", "href": "/zertifikat-pruefen", "highlight": true }
+  ],
+  "hero": [
+    {
+      "image": "/assets/hero/hero-1.jpg",
+      "links": [
+        { "label": "Religious and legal foundations", "href": "#religion" },
+        { "label": "Quality policy", "href": "#qualitaet" },
+        { "label": "Animal welfare", "href": "#tierschutz" }
+      ]
+    },
+    {
+      "image": "/assets/hero/hero-2.jpg",
+      "links": [
+        { "label": "What is Halal?", "href": "#halal" },
+        { "label": "The Halal standards", "href": "#services" },
+        { "label": "The Halal market", "href": "#halal-markt" }
+      ]
+    }
+  ],
+  "slider": [
+    {
+      "title": "WHU",
+      "subtitle": "World Halal Union",
+      "intro": "We certify Halal according to the following standards:",
+      "items": [
+        "OIC/SMIIC 1:2012 (DHB-TS OIC/SMIIC 1:2012)",
+        "HDC – Halal Development Council - Malaysia",
+        "DHC-Malaysia - Halal Industry Development Corporation",
+        "Malaysia (JAKIM)",
+        "Indonesia (MUI)",
+        "United Arab Emirates (UAE)",
+        "Singapore (MUIS)"
+      ],
+      "images": [
+        { "src": "/assets/slider/whu-seal.png", "alt": "WHU Halal Certification seal", "width": 250, "height": 248 },
+        { "src": "/assets/brand/whu-logo-large.png", "alt": "World Halal Union logo", "width": 313, "height": 274 }
+      ]
+    },
+    {
+      "title": "IHI Alliance",
+      "subtitle": "International Halal Integrity Alliance - MALAYSIA",
+      "items": [],
+      "images": [
+        { "src": "/assets/slider/ihi-alliance.png", "alt": "Member of International Halal Integrity Alliance", "width": 313, "height": 274 }
+      ]
+    },
+    {
+      "title": "Strategic partner",
+      "subtitle": "STRATEGIC PARTNERSHIP",
+      "items": [],
+      "images": [
+        { "src": "/assets/slider/halal-research-council.png", "alt": "Halal Research Council", "width": 313, "height": 274 }
+      ]
+    },
+    {
+      "title": "DIN membership",
+      "subtitle": "DIN Deutsches Institut für Normung e. V.",
+      "intro": "Membership of DIN Deutsches Institut für Normung e. V. (German Institute for Standardization)",
+      "items": ["Membership number: 7919"],
+      "images": [
+        { "src": "/assets/slider/din-member.png", "alt": "Member of DIN", "width": 145, "height": 170 }
+      ]
+    }
+  ],
+  "closingParallax": { "image": "p-5" },
+  "footer": {
+    "orgName": "World Halal Union",
+    "links": [
+      { "label": "Legal notice", "href": "/impressum" },
+      { "label": "Privacy policy", "href": "/datenschutz" }
+    ],
+    "addressHeading": "Address",
+    "office": "WHU – WELT HALAL UNION Zertifizierungsstelle",
+    "officeEn": "WHU – World Halal Union Certification Body",
+    "person": ["Günhan Kaplan", "Leiter der Zertifizierungsstelle", "Head of Certification Body"],
+    "address": ["Rupert-Mayer-Str.44", "Sirius Business Park, Geb.6407", "D-81379 München"],
+    "phone": "Phone: +49 89 9901 3681",
+    "fax": "Fax: +49 89 9901 3682",
+    "email": "info@halal-zertifizierung.org",
+    "copyright": "WHU – World Halal Union"
+  }
+}

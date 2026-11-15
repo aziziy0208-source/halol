@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { cacheLife } from "next/cache";
-import { content } from "@/content";
+import { contentFor } from "@/content";
+import type { SiteLang } from "@/i18n/site";
 import { FaIcon, ICONS } from "@/components/icons";
 import { Container } from "./layout-primitives";
 
@@ -14,8 +15,8 @@ async function CurrentYear() {
  * Dark footer with the legal links and the office address. Replaces the
  * original "+" slide-out panel and its "QF 2014" footer line.
  */
-export function Footer() {
-  const f = content.site.footer;
+export function Footer({ lang = "de" }: { lang?: SiteLang }) {
+  const f = contentFor(lang).site.footer;
   return (
     <footer className="bg-[#3a3a3a] text-[#c8c8c8]">
       <Container className="grid gap-8 py-10 md:grid-cols-3">

@@ -3,6 +3,7 @@ import type { ContentSection as ContentSectionData } from "@/content/schema";
 import { Rows } from "./blocks";
 import { IconCards, StatCards } from "./cards";
 import { Container, MessageBlock, TitleBar } from "./layout-primitives";
+import type { SiteLang } from "@/i18n/site";
 import { Parallax } from "./parallax";
 
 type Props = {
@@ -11,13 +12,14 @@ type Props = {
   withParallax?: boolean;
   /** Extra content rendered above the title (the About slider). */
   before?: ReactNode;
+  lang?: SiteLang;
 };
 
-export function ContentSection({ section, withParallax = true, before }: Props) {
+export function ContentSection({ section, withParallax = true, before, lang = "de" }: Props) {
   return (
     <>
       {withParallax && section.parallax ? (
-        <Parallax image={section.parallax.image} text={section.parallax.text} />
+        <Parallax image={section.parallax.image} text={section.parallax.text} lang={lang} />
       ) : null}
       <section id={section.id} className="pb-16">
         {before}
