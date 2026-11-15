@@ -71,5 +71,10 @@
     "esbuild@0.28.2": true,
     "fsevents@2.3.3": true,
     "prisma@7.10.1": true
+  },
+  "overrides": {
+    "@vercel/cli-config": {
+      "zod": "$zod"
+    }
   }
 }
