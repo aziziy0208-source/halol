@@ -130,6 +130,8 @@ body.preview .page{margin:0 auto 6mm;box-shadow:0 2px 14px rgba(0,0,0,.22)}
 .qr{position:absolute;z-index:2;background:#fff}
 .qr svg{display:block;width:100%;height:100%}
 .qr-pending{position:absolute;z-index:2;left:109mm;top:221.5mm;width:25mm;height:25mm;border:.3mm dashed #8a94a6;display:flex;align-items:center;justify-content:center;text-align:center;font-size:7pt;line-height:1.25;color:#5b6472;padding:2mm;background:rgba(255,255,255,.85)}
+.footer-contact{position:absolute;z-index:1;left:0;right:0;top:289.92mm;margin:0;text-align:center;color:#fff;font-weight:700;font-size:11pt;line-height:1;white-space:nowrap}
+.footer-contact .dot{font-size:.7em;vertical-align:.12em;margin:0 .45em}
 .page-no{position:absolute;z-index:2;left:0;right:0;top:271.4mm;text-align:center;font-size:8pt;color:#333}
 .annex-flow{position:absolute;z-index:1;left:20.1mm;right:22.4mm;top:87.6mm;height:180mm;display:flex;flex-direction:column;text-align:center}
 .annex-title{font-size:14pt;line-height:${line(14)};font-weight:700;color:${BLUE}}
@@ -173,7 +175,7 @@ function mark(doc: CertificateDocument): string {
 
 export function renderCertificateV2(doc: CertificateDocument, options: RenderOptions): string {
   const a = options.assetBase.replace(/\/$/, "");
-  const bg = `<img class="bg" src="${a}/certificate/v2/background.png" alt="">`;
+  const bg = `<img class="bg" src="${a}/certificate/v2/background.png" alt=""><p class="footer-contact">${T.footerContact.map(esc).join('<span class="dot">•</span>')}</p>`;
   const { name, address } = companyLines(doc);
   const codes = doc.standards.map((s) => s.code).join(", ") || "—";
   const number = doc.certificateNumber

@@ -76,8 +76,11 @@ Deploy (Git push or `npx vercel --prod`). The build log shows the migrations and
 
 ## 6. Domain
 
-Project → **Settings → Domains** → add `halal-zertifizierung.de` (and `www.` as redirect),
-set the DNS records Vercel shows. Then set `APP_URL=https://halal-zertifizierung.de` and
+Project → **Settings → Domains** → add `halal-zertifizierung.org` (and `www.` as redirect).
+Either set the DNS records Vercel shows at the registrar, or (done for halal-zertifizierung.org,
+registered at AHOST) switch the domain's nameservers to `ns1.vercel-dns.com` / `ns2.vercel-dns.com`
+so Vercel serves the whole zone (mail records then go into Vercel DNS too). Then set
+`APP_URL=https://halal-zertifizierung.org` and
 redeploy. **Do this before issuing real certificates** — every QR code keeps the URL that was
 configured when it was issued.
 

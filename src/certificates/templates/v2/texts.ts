@@ -31,4 +31,6 @@ export const TEXTS_V2 = {
   sampleMark: "MUSTER · SAMPLE",
   qrPending: "QR code is created on issue",
   verifyCaption: "Online verification",
+  // Contact line in the blue footer band (the artwork's own line was removed from background.png).
+  footerContact: ["info@halal-zertifizierung.org", "halal-zertifizierung.org"],
 } as const;

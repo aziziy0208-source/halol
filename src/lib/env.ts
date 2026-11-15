@@ -21,7 +21,7 @@ const optional = <T extends z.ZodType>(schema: T) =>
 const serverEnvSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
   DATABASE_URL: z.url({ protocol: /^postgres(ql)?$/ }),
-  // Public base URL used in QR links, e.g. https://halal-zertifizierung.de
+  // Public base URL used in QR links, e.g. https://halal-zertifizierung.org
   APP_URL: z.preprocess(() => configuredAppUrl(), z.url({ protocol: /^https?$/ })),
   // Key for hashing IP addresses (rate limits, logs). Never store raw IPs.
   IP_HASH_SECRET: z.string().min(32),
@@ -50,7 +50,7 @@ const serverEnvSchema = z.object({
   SMTP_USER: optional(z.string()),
   SMTP_PASSWORD: optional(z.string()),
   SMTP_FROM: optional(z.string()),
-  CONTACT_TO_EMAIL: z.email().default("info@halal-zertifizierung.com"),
+  CONTACT_TO_EMAIL: z.email().default("info@halal-zertifizierung.org"),
 });
 
 export type ServerEnv = z.infer<typeof serverEnvSchema>;
@@ -72,5 +72,5 @@ export function serverEnv(): ServerEnv {
 
 /** Public site URL for metadata, sitemap and robots (safe at build time). */
 export function siteUrl(): string {
-  return (configuredAppUrl() || "https://halal-zertifizierung.de").replace(/\/$/, "");
+  return (configuredAppUrl() || "https://halal-zertifizierung.org").replace(/\/$/, "");
 }

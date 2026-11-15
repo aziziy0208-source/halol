@@ -42,7 +42,7 @@ export const TEXTS_V1 = {
     "Gültig nur in Verbindung mit der Online-Prüfung unter der angegebenen Adresse. Das Zertifikat bleibt Eigentum der WHU. · " +
     "Valid only together with the online verification at the address shown. The certificate remains the property of WHU.",
   // Open question to WHU: which office address belongs on the certificate.
-  footer: "WHU – World Halal Union · Zertifizierungsstelle · Rupert-Mayer-Str. 44 · D-81379 München · info@halal-zertifizierung.com",
+  footer: "WHU – World Halal Union · Zertifizierungsstelle · Rupert-Mayer-Str. 44 · D-81379 München · info@halal-zertifizierung.org",
   annexTitle: ["Anlage zum Halal-Zertifikat", "Annex to halal certificate"],
   page: (current: number, total: number) => `Seite ${current} von ${total} · Page ${current} of ${total}`,
   draftMark: "ENTWURF · DRAFT",

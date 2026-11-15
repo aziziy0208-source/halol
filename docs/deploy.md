@@ -13,7 +13,7 @@ Internet ──443──▶ caddy ──▶ app (Next.js + Chromium) ──▶ p
 
 - VPS with **2 vCPU / 4 GB RAM / 40 GB disk** or more, Ubuntu 24.04 LTS, data centre in
   the EU (e.g. Hetzner Falkenstein/Nürnberg, netcup, IONOS). Sign the provider's DPA (AV-Vertrag).
-- DNS: `A` (and `AAAA`) records for `halal-zertifizierung.de` and `www.halal-zertifizierung.de`
+- DNS: `A` (and `AAAA`) records for `halal-zertifizierung.org` and `www.halal-zertifizierung.org`
   pointing to the server.
 - Firewall: allow only 22 (SSH, key login only), 80 and 443.
 
@@ -36,8 +36,8 @@ Set at least:
 
 | Variable | Production value |
 |---|---|
-| `APP_URL` | `https://halal-zertifizierung.de` — QR codes point here, **never change it later** |
-| `DOMAIN` / `REDIRECT_DOMAIN` | `halal-zertifizierung.de` / `www.halal-zertifizierung.de` |
+| `APP_URL` | `https://halal-zertifizierung.org` — QR codes point here, **never change it later** |
+| `DOMAIN` / `REDIRECT_DOMAIN` | `halal-zertifizierung.org` / `www.halal-zertifizierung.org` |
 | `ACME_EMAIL` | an address that receives certificate expiry notices |
 | `SMTP_*`, `CONTACT_TO_EMAIL` | mail server for contact form notifications |
 | `SEED_SUPERADMIN_EMAIL` / `_NAME` | the first super admin; leave `SEED_SUPERADMIN_PASSWORD` empty |
@@ -53,7 +53,7 @@ Keep a copy of `.env` in a password manager — without it backups cannot be res
 docker compose up -d --build                         # migrate runs first, then app, caddy, backup
 docker compose run --rm migrate npx prisma db seed   # prints the super admin password ONCE
 docker compose ps                                    # all services "running" / "healthy"
-curl -I https://halal-zertifizierung.de/api/health
+curl -I https://halal-zertifizierung.org/api/health
 ```
 
 Then sign in at `/admin`: set up two-factor authentication, change the password, and in
