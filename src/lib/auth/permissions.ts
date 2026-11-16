@@ -37,8 +37,16 @@ export function can(role: Role, permission: Permission): boolean {
 /** Roles that must use two-factor authentication (spec §7.1). */
 export const TWO_FACTOR_REQUIRED_ROLES: readonly Role[] = ["SUPER_ADMIN", "ADMIN"];
 
+/**
+ * The operator can switch the role requirement off with REQUIRE_2FA=false (sign-in with
+ * e-mail and password only). Users who set up an authenticator keep using it.
+ */
+export function twoFactorRequiredForRoles(): boolean {
+  return process.env.REQUIRE_2FA !== "false";
+}
+
 export function requiresTwoFactor(user: { role: Role; totpEnabledAt: Date | null }): boolean {
-  return TWO_FACTOR_REQUIRED_ROLES.includes(user.role) || user.totpEnabledAt !== null;
+  return (twoFactorRequiredForRoles() && TWO_FACTOR_REQUIRED_ROLES.includes(user.role)) || user.totpEnabledAt !== null;
 }
 
 export const ROLES: readonly Role[] = ALL;

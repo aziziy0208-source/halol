@@ -60,7 +60,8 @@ async function waitForHealth(base: string, server: ChildProcess, log: () => stri
   throw new Error(`server did not become healthy:\n${log()}`);
 }
 
-export function e2eEnvironment(name: string, port: number) {
+/** extraEnv: additional server environment, e.g. { REQUIRE_2FA: "false" }. */
+export function e2eEnvironment(name: string, port: number, extraEnv: Record<string, string> = {}) {
   const base = `http://127.0.0.1:${port}`;
   let databaseUrl = "";
   let storageDir = "";
@@ -90,6 +91,7 @@ export function e2eEnvironment(name: string, port: number) {
         HOSTNAME: "127.0.0.1",
         STORAGE_DRIVER: "fs",
         STORAGE_DIR: storageDir,
+        ...extraEnv,
       };
       run(["prisma", "migrate", "deploy"], env);
       run(["prisma", "db", "seed"], {

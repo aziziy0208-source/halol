@@ -84,6 +84,12 @@ so Vercel serves the whole zone (mail records then go into Vercel DNS too). Then
 redeploy. **Do this before issuing real certificates** — every QR code keeps the URL that was
 configured when it was issued.
 
+## Sign-in
+
+Production runs with `REQUIRE_2FA=false` (owner's decision, 2026-11-16): admins sign in with
+e-mail and password only; 2FA stays available per user (Account → enable). Without the variable,
+Super Admin and Admin must use an authenticator app. Lockout after failed logins still applies.
+
 ## E-mail (Resend)
 
 - Domain `halal-zertifizierung.org` is verified in Resend (region eu-west-1) for sending and
