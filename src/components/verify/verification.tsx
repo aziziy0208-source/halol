@@ -90,18 +90,12 @@ function Card({ title, children }: { title?: string; children: ReactNode }) {
 
 function Contact({ lang }: { lang: VerifyLang }) {
   const f = content.site.footer;
-  const phone = f.phone.replace(/^[^+\d]*/, "");
   const link = "text-[#005c7d] underline";
   return (
     <ul className="mt-2 space-y-1">
       <li>
         <a href={`mailto:${f.email}`} className={link}>
           {f.email}
-        </a>
-      </li>
-      <li>
-        <a href={`tel:${phone.replace(/[^+\d]/g, "")}`} className={link}>
-          {phone}
         </a>
       </li>
       <li>

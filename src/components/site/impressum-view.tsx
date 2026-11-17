@@ -28,8 +28,6 @@ export function ImpressumView({ lang }: { lang: SiteLang }) {
           <Lines heading={i.provider.heading} lines={i.provider.lines} />
           <Lines heading={i.contact.heading} lines={i.contact.lines} />
           <p className="mb-[18px]">
-            <span className="block">{i.contact.phone}</span>
-            <span className="block">{i.contact.fax}</span>
             <a href={`mailto:${i.contact.email}`} className="text-brand-ink hover:underline">
               {i.contact.email}
             </a>

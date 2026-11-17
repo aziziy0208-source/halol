@@ -5,11 +5,6 @@ import { Container, MessageBlock, TitleBar } from "./layout-primitives";
 import type { SiteLang } from "@/i18n/site";
 import { Parallax } from "./parallax";
 
-/** "+49 17 42 495 885" → "+49174249588" for tel: links (drops the "Tel (work):" label). */
-function telHref(label: string): string {
-  return `tel:${label.replace(/^.*?:/, "").replace(/[^\d+]/g, "")}`;
-}
-
 export function ContactSection({ section, lang = "de" }: { section: ContactSectionData; lang?: SiteLang }) {
   const o = section.office;
   return (
@@ -40,15 +35,6 @@ export function ContactSection({ section, lang = "de" }: { section: ContactSecti
                     ))}
                   </span>
                 </li>
-                {o.phones.map((phone) => (
-                  <li key={phone} className="flex gap-1.5">
-                    <FaIcon icon={ICONS.phone} className="mt-1 h-3.5 w-3.5 shrink-0" />
-                    {/* min-h-6: 24px touch target for phone numbers on mobile */}
-                    <a href={telHref(phone)} className="inline-block min-h-6 hover:text-brand-ink">
-                      {phone}
-                    </a>
-                  </li>
-                ))}
                 <li className="flex gap-1.5">
                   <FaIcon icon={ICONS.home} className="mt-1 h-3.5 w-3.5 shrink-0" />
                   <address className="not-italic">

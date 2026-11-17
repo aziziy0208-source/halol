@@ -7,12 +7,10 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
 import { faComment } from "@fortawesome/free-solid-svg-icons/faComment";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
 import { faEye } from "@fortawesome/free-solid-svg-icons/faEye";
-import { faFax } from "@fortawesome/free-solid-svg-icons/faFax";
 import { faGear } from "@fortawesome/free-solid-svg-icons/faGear";
 import { faGears } from "@fortawesome/free-solid-svg-icons/faGears";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
 import { faHouse } from "@fortawesome/free-solid-svg-icons/faHouse";
-import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
 import { faSignal } from "@fortawesome/free-solid-svg-icons/faSignal";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons/faTriangleExclamation";
 import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
@@ -32,8 +30,6 @@ export const ICONS = {
   remove: faXmark,
   angle: faAngleRight,
   user: faUser,
-  phone: faPhone,
-  fax: faFax,
   home: faHouse,
   envelope: faEnvelope,
 } as const;

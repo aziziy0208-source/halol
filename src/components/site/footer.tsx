@@ -58,16 +58,6 @@ export function Footer({ lang = "de" }: { lang?: SiteLang }) {
               </address>
             </li>
             <li className="flex gap-2">
-              <FaIcon icon={ICONS.phone} className="mt-1 h-3.5 w-3.5 shrink-0 text-brand" />
-              <a href={`tel:${f.phone.replace(/[^\d+]/g, "")}`} className="hover:text-brand">
-                {f.phone}
-              </a>
-            </li>
-            <li className="flex gap-2">
-              <FaIcon icon={ICONS.fax} className="mt-1 h-3.5 w-3.5 shrink-0 text-brand" />
-              <span>{f.fax}</span>
-            </li>
-            <li className="flex gap-2">
               <FaIcon icon={ICONS.envelope} className="mt-1 h-3.5 w-3.5 shrink-0 text-brand" />
               <a href={`mailto:${f.email}`} className="hover:text-brand">
                 {f.email}

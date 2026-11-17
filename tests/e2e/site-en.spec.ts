@@ -61,6 +61,12 @@ test("English site: /en pages, language switch, localized links, contact form, S
   await page.goto(`${BASE}/en/imprint`);
   check((await page.locator('header a[hreflang="de"]').first().getAttribute("href")) === "/impressum", "imprint ↔ Impressum switch");
 
+  // ── No phone or fax numbers anywhere (owner's decision 2026-11-17) ──
+  for (const path of ["/", "/en", "/impressum", "/en/imprint", "/zertifikat-pruefen", "/en/verify-certificate"]) {
+    const html = await (await page.request.get(`${BASE}${path}`)).text();
+    check(!html.includes("tel:") && !/\+49[\s\d]/.test(html) && !/\bFax\b/i.test(html), `${path}: no phone/fax numbers`);
+  }
+
   // ── Sitemap ──
   const sitemap = await (await page.request.get(`${BASE}/sitemap.xml`)).text();
   check(sitemap.includes("/en/verify-certificate") && sitemap.includes('hreflang="de"'), "sitemap lists English pages with alternates");
