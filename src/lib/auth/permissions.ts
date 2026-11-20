@@ -24,6 +24,8 @@ export const PERMISSIONS = {
   /** Contact-form messages contain personal data: admins only (DSGVO data minimisation). */
   "message.view": ADMINS,
   "audit.view": ADMINS,
+  /** Visitor statistics of the public site (anonymous aggregates). */
+  "stats.view": ADMINS,
   "settings.manage": SUPER,
   "user.manage": SUPER,
 } as const satisfies Record<string, readonly Role[]>;

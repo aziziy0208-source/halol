@@ -266,6 +266,34 @@ model ContactMessage {
 
 /// Fixed-window rate limit counters (login, contact form, /v/, manual check).
 /// Kept in Postgres so limits survive restarts on the single-VPS setup.
+/// Page view on the public site (first-party, cookieless statistics). DSGVO: no IP address,
+/// no cookie — visitors are counted with a hash whose random salt is replaced every day,
+/// so they cannot be followed across days. Rows older than 25 months are deleted.
+model PageView {
+  id           String   @id @default(cuid())
+  createdAt    DateTime @default(now())
+  path         String
+  siteLang     String? // "de" | "en" (site language of the page)
+  source       String // direct | search | social | ai | email | referral | campaign
+  sourceName   String? // e.g. "Google", "Telegram", "example.com"
+  referrerHost String?
+  utmSource    String?
+  utmMedium    String?
+  utmCampaign  String?
+  country      String? // ISO 3166-1 alpha-2, from the CDN's geolocation
+  region       String?
+  city         String?
+  device       String // mobile | tablet | desktop
+  browser      String?
+  os           String?
+  language     String? // browser language, e.g. "de", "uz"
+  screenWidth  Int?
+  visitorHash  String // daily-rotating, unlinkable across days
+
+  @@index([createdAt])
+  @@index([visitorHash])
+}
+
 /// E-mails received at the domain (info@…), copied from the mail provider (Resend Inbound)
 /// so the admin panel keeps them after the provider's retention period.
 model InboundEmail {

@@ -33,6 +33,11 @@ export const NavIcons = {
       <path d="M8 8h8M8 12h5" />
     </svg>
   ),
+  statistics: (
+    <svg {...base}>
+      <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+    </svg>
+  ),
   inbox: (
     <svg {...base}>
       <path d="M3 13l2.5-8h13L21 13v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />

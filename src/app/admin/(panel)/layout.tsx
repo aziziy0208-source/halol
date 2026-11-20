@@ -28,6 +28,7 @@ export default function PanelLayout({ children }: { children: ReactNode }) {
 
 const NAV: { href: string; key: keyof AdminMessages["nav"]; permission: Permission; icon: keyof typeof NavIcons }[] = [
   { href: "/admin", key: "dashboard", permission: "dashboard.view", icon: "dashboard" },
+  { href: "/admin/statistics", key: "statistics", permission: "stats.view", icon: "statistics" },
   { href: "/admin/certificates", key: "certificates", permission: "certificate.view", icon: "certificates" },
   { href: "/admin/approvals", key: "approvals", permission: "certificate.edit", icon: "approvals" },
   { href: "/admin/companies", key: "companies", permission: "company.view", icon: "companies" },

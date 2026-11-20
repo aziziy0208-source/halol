@@ -107,6 +107,12 @@ operations: **[docs/deploy.md](docs/deploy.md)**.
 and English (`/en`, `/en/imprint`, `/en/privacy`, `/en/verify-certificate`) — texts in
 `content/de` and `content/en`, UI strings and URL mapping in `src/i18n/site.ts`.
 
+**Statistics:** first-party, cookieless visitor statistics (`src/lib/analytics`, beacon
+`POST /api/collect`, table `PageView`): sources (search engines, social networks, AI assistants,
+referring sites, UTM campaigns), countries/cities (from the CDN), devices, browsers, OS, languages,
+pages, hours, plus certificate checks — admin panel → *Statistics*. No IP addresses or cookies;
+visitor hashes use a random salt that changes daily; 25-month retention (daily cron).
+
 **Mailbox:** e-mails received at the domain (Resend Inbound) appear in the admin panel under
 *Mailbox* (`src/lib/inbox`, needs `RESEND_API_KEY`).
 

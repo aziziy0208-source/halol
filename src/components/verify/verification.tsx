@@ -14,6 +14,7 @@ import type { ReactNode } from "react";
 import { FaIcon } from "@/components/icons";
 import { Footer } from "@/components/site/footer";
 import { content } from "@/content";
+import { Analytics } from "@/components/site/analytics";
 import { localizeHref, sitePath } from "@/i18n/site";
 import { countryName, formatVerifyDate, formatVerifyDateTime, type VerifyLang, verifyTexts } from "@/i18n/verify";
 import type { PublicCertificate, PublicStatus } from "@/lib/verify/lookup";
@@ -57,6 +58,7 @@ export function VerifyFrame({ lang, switchHref, children }: { lang: VerifyLang; 
       </header>
       <main className="mx-auto w-full max-w-[720px] flex-1 space-y-4 px-4 py-5">{children}</main>
       <Footer lang={lang} />
+      <Analytics />
     </div>
   );
 }
